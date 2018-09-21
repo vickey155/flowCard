@@ -7,7 +7,8 @@ var dist = 'dist';
 
 //default paths in src folder
 var scss = 'global/scss';
-var jade = 'jade';
+var pug = 'pug';
+var layout = 'layout';
 
 //default paths in dist folder
 var css = 'global/css';
@@ -56,7 +57,8 @@ module.exports.style = {
 
 module.exports.template = {
 	languages:languages,
-	src:path.join(src,jade,'/**/*.jade'),
+	src:path.join(src,pug,'/**/*.pug'),
+	layoutSrc:path.join(src,pug,layout,'/**/*.pug'),
 	dist:path.join(dist,template),
 	cfg:{
 		pretty:true,
@@ -71,7 +73,7 @@ module.exports.script = {
 
 module.exports.watch ={
 	scss:path.join(src,scss,'/**/*.scss'),
-	jade:path.join(src,jade,'/**/*.jade'),
+	pug:path.join(src,pug,'/**/*.pug'),
 	script:path.join(src,script,'/**/*.js')
 }
 

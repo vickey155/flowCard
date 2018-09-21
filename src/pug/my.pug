@@ -1,0 +1,25 @@
+extends layout/layout
+
+block append headTitle
+  title 17557286952
+
+block content
+    include layout/header_blue.pug
+    .my-sec
+        .sec-card-list
+            .sec-row
+                img.img-pic(src="")
+                .col
+                    .row
+                        label 卡号:
+                        div.font-blue 89860 2B411 16C00 78152
+                    .row
+                        label 号码:
+                        div.font-grey 10640 0904 7350
+                    .row
+                        span.icon.icon-green 关机
+                        span.icon.icon-blue 关机
+                img.arrow-right(src="")
+        .btn-wrap
+            a(href="javascript:void(0);").btn-bg-white 扫码添加
+            a(href="javascript:void(0);").btn-bg-white 手工添加

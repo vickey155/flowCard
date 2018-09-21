@@ -1,0 +1,22 @@
+extends layout/layout
+
+block headTitle
+    title 登陆
+
+block content
+    .login-sec
+        .pic-wrap
+            img(src="", alt="")
+        .el-form
+            .el-row
+                label.el-label 账号
+                .el-col
+                    input.input-txt(type="text" placeholder="手机号")
+            .el-row
+                label.el-label 密码
+                .el-col
+                    input.input-code(type="text" placeholder="短信验证码")
+                    a(href="javascript:void(0)").code-btn 发送短信验证码
+
+        .btn-wrap
+            a(href="javascript:void(0);").btn.btn-bg-blue 登录

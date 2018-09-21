@@ -3,7 +3,7 @@ var gulp = require('gulp-help')(require('gulp'));
 var $gulp = require('gulp');
 var config = require('./config.js');
 var gulpScss = require('gulp-sass');
-var gulpJade = require('gulp-jade');
+var gulpPug = require('gulp-pug');
 var gulpPlumber = require('gulp-plumber'); //prevent pipe breaking caused by errors from gulp plugins  使用plumber 模块可以在纠正错误后继续执行任务
 var gulpBabel = require('gulp-babel');
 
@@ -64,11 +64,11 @@ gulp.task('clearCache', 'Clear Imagemin cache', function (done) {
     gulpCache.clearAll(done);
 });
 
-//使用webstorm时  有时会默认选择自动编译jade,直接编译在jade文件下html页面，需要关闭webstorm中的jade编译功能
+//使用webstorm时  有时会默认选择自动编译pug,直接编译在pug文件下html页面，需要关闭webstorm中的pug编译功能
 gulp.task('template',function(){
-	return gulp.src(config.template.src)
+	return gulp.src([config.template.src, '!'+config.template.layoutSrc])
 		.pipe(gulpPlumber(handleErrors))
-        .pipe(gulpJade(config.template.cfg))
+        .pipe(gulpPug(config.template.cfg))
 		.pipe(gulp.dest(config.template.dist));
 
 });
@@ -99,7 +99,7 @@ gulp.task('watch', 'Watch source files', function () {
     gulp.watch(config.watch.scss, ['style',reload]);
     gulp.watch(config.watch.script, ['script', reload]);
     gulp.watch(config.watch.image, ['image', reload]);
-    gulp.watch(config.watch.jade, ['template', reload]);
+    gulp.watch(config.watch.pug, ['template', reload]);
 });
 
 
@@ -107,12 +107,10 @@ gulp.task('serve','Serve project with livereload and file watching',function(cb)
 		runSequence(
                 'clean:dist',
                 ['style','script','image','template'],
-                'clean:layout',
                 'browser-sync',
 				'watch',
 				cb
 			);
 });
-
 
 

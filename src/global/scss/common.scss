@@ -1,6 +1,8 @@
-@import "reset";
-
-body{padding:0; color: #333;background-color: #f5f4f9;width:100%;margin:0 auto;}
+@import "./reset";
+html{
+  height: 100%;
+}
+body{padding:0; color: #000;background: #F2F2F2;width:100%; min-height:100%; margin:0 auto;}
 
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
@@ -8,18 +10,9 @@ h1{font-weight:normal;margin:0; padding:0;}
 .fr{float:right;}
 $bg:#f2f2f2;
 $white:#fff;
+$c0:#000;
 $c3:#333;
-$c6:#666;
-$c9:#999;
-$d9:#d9d9d9;
-$dd:#dddddd;
-$cc:#ccc;
-$blue:#508cee;
-$red:#f7655e;
-$yellow:#d1a665;
-$border-w:0.04rem;
 $borderRadius:0.1rem;
-$fc:#393543;
 @mixin opacity_bg($opa:0.8,$col:#000){
   background-color: $col;
   opacity: $opa;
@@ -31,38 +24,44 @@ $fc:#393543;
   background: -moz-linear-gradient($deg, $cS, $cE); /* Firefox 3.6 - 15 */
   background: linear-gradient($deg, $cS, $cE); /* 标准的语法（必须放在最后） */
 }
-@mixin fontSize($val:12px){
+@mixin fontSize($fz:12px){
   @media screen and (max-width: 321px) {
-    font-size:$val;
+    font-size:$fz;
   }
   @media screen and (min-width: 321px) and (max-width:400px) {
-    font-size:$val + 1px;
+    font-size:$fz + 1px;
   }
   @media screen and (min-width: 400px) and(max-width:640px) {
-    font-size:$val + 3px;
+    font-size:$fz + 3px;
   }
   @media screen and (min-width: 640px) {
-    font-size:$val + 3px;
+    font-size:$fz + 3px;
   }
 }
-//- @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center);
-@mixin fontFormat($fz:1rem,$fc:$c3,$ta:left){
+//- @include fontFormat($fz:12px,$fc:$c3,$ta:center);
+@mixin fontFormat($fz:12px,$fc:$c0,$ta:left){
   color:$fc;
   text-align: $ta;
-  @media screen and (max-width: 321px) {
-    font-size:$fz - 0.01rem;
-  }
-  @media screen and (min-width: 321px) and (max-width:400px) {
-    font-size:$fz + 0rem;
-  }
-  @media screen and (min-width: 400px) and(max-width:640px) {
-    font-size:$fz + 0.01rem;
-  }
-  @media screen and (min-width: 640px) {
-    font-size:$fz +0.02rem;
-  }
+  @include fontSize($fz:$fz); 
 }
 
+//导航
+.header-purple{
+  background: #8484F5;
+  display: flex;
+  align-items: center;
+  height: 0.48rem;
+  padding: 0 0.17rem; 
+  img{
+    width: 0.2rem;
+    height: 0.2rem;
+  }
+  span{
+    flex:1;
+    @include fontFormat($fz: 17px,$fc:#fff,$ta:center);
+    
+  }
+}
 
 //省略号
 .ellipsis{
@@ -109,97 +108,82 @@ $fc:#393543;
   //}
 }
 
+//按钮
+.btn-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top:0.3rem;
+  .btn{
+    flex:1;
+  }
+  .btn-bg-blue{
+    background: #519aec;
+    line-height: 0.6rem;
+    border-radius: 0.08rem;
+    @include fontFormat($fz: 22px,$fc:#fff,$ta:center);
+    font-weight: 400;  
+  }
+  .btn-bg-white{
+    background: #fff;
+    @include fontFormat($fz: 11px,$ta:center);
+    border: 0.01rem solid #979797;
+    line-height: 0.3rem;
+    width: 1rem;
+    border-radius:0.05rem;
+  }
+}
+
 
 //表单
 .el-form {
-  padding-left: 0.32rem;
   background-color: $white;
-  .form-row {
-    border-bottom: 0.01rem solid $dd;
+  .el-row {
+    border-bottom: 0.01rem solid #DEDEDE;
     width: 100%;
-    padding: 0.25rem 0.32rem 0.25rem 0;
-    line-height: 0.6rem;
+    padding: 0.08rem 0;
     overflow: hidden;
-    &:last-child{
-      border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .el-col{
+      flex:1;  
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    label {
-      @include fontFormat($fz: 0.32rem, $fc: $c3);
-      float: left;
+    .el-label {
+      @include fontFormat($fz: 16px);
+      font-weight: 400;
+      width: 0.75rem;
+      min-width: 0.75rem;
+      line-height: 0.34rem;
     }
-    .inputClass{
-      float: right;
-      min-width: 5.2rem;
+    input{
       background: transparent;
-      @include fontFormat($fz: 0.32rem, $fc: $c3,$ta:right);
-      line-height: 0.6rem;
-      padding:0 0.06rem;
-      border: 0.01rem solid $white;
+      vertical-align: top;
+      line-height: 0.34rem;
+      height: 0.34rem;
       outline: none;
-     }
-    input.error-input {
-      border-color: $red;
-    }
-    input.input-text-large{
-      @extend .inputClass;
-    }
-    textarea{
-      @extend .inputClass;
-      resize: none;
-    }
-    textarea.error-input {
-      border-color: $red;
-    }
-    .selectClass{
-      background: $white;
-      border: 0.01rem solid $white;
-      //border:0;
-      line-height: 0.6rem;
       padding:0 0.06rem;
-      margin-right: 1%;
-      appearance: none;
-      -webkit-appearance: none;
-      outline: none;
-      @include fontFormat($fz: 0.32rem, $fc: $c9,$ta:right);
-      direction: rtl;
-      option{
-        direction: rtl;
-      }
+      @include fontFormat($fz: 16px);
+      display: inline-block;
+      width: auto;
     }
-    select.select-large{
-      float: right;
-      min-width: 5.2rem;
-      background: $white;
-      @extend .selectClass;
+    
+    .input-code{
+      width:1.4rem;
     }
-    select.selected{
-      color:$c3;
-    }
-    input.error-input{
-      border-color:$red;
-    }
-    select.error-input{
-      border: 0.01rem solid $red;
-      padding:0 0.06rem;
-    }
-    .select-region-wrap{
-      float: right;
-      min-width: 5.2rem;
-      select{
-        float: left;
-        width: 32%;
-        @extend .selectClass;
-      }
-      select:last-child{
-        width: 33%;
-      }
-      select.selected{
-        color:$c3;
-      }
-      select.error-input{
-        border-color:$red;
-      }
-    }
+   .code-btn{
+     border-radius: 0.06rem;
+     padding: 0 0.05rem;
+     min-width: 1rem;
+     line-height: 0.28rem;
+     height: 0.28rem;
+     @include fontFormat($fz: 12px);
+     border:0.01rem solid #c2c2c2;
+   }
   }
 }
 //白色右箭头 小
