@@ -1,0 +1,32 @@
+extends layout/layout
+
+block headTitle
+  title 充值
+
+block content
+    - var titleName = '充值';
+    -var headerImg = 'back';
+    include layout/header_blue.pug
+    .recharge-sec
+      .card
+        .trange-left-bottom
+        .col-l
+          .name ICCID号
+          .no 89860 2B012 15901 53973
+        .col-r
+          img(src="", alt="").icon-card
+        .tips-red 请仔细核对ICCID号，支付后将无法撤回
+
+    .list
+      .row
+        label 续费套餐：
+        .txt 测试套餐（1个月有效）
+      .row-tips 流量按月计算，一年有效，全国通用，用完即停机
+      .row
+        label 续费金额：
+        .txt ¥2
+
+
+
+      .btn-one
+          a(href="javascript:void(0);").btn-bg-white-m 立即支付

@@ -29,20 +29,20 @@ $borderRadius:0.1rem;
     font-size:$fz;
   }
   @media screen and (min-width: 321px) and (max-width:400px) {
-    font-size:$fz + 1px;
+    font-size:$fz;
   }
   @media screen and (min-width: 400px) and(max-width:640px) {
-    font-size:$fz + 3px;
+    font-size:$fz + 2px;
   }
   @media screen and (min-width: 640px) {
-    font-size:$fz + 3px;
+    font-size:$fz + 4px;
   }
 }
 //- @include fontFormat($fz:12px,$fc:$c3,$ta:center);
 @mixin fontFormat($fz:12px,$fc:$c0,$ta:left){
   color:$fc;
   text-align: $ta;
-  @include fontSize($fz:$fz); 
+  @include fontSize($fz:$fz);
 }
 
 //导航
@@ -51,7 +51,7 @@ $borderRadius:0.1rem;
   display: flex;
   align-items: center;
   height: 0.48rem;
-  padding: 0 0.17rem; 
+  padding: 0 0.17rem;
   img{
     width: 0.2rem;
     height: 0.2rem;
@@ -59,7 +59,7 @@ $borderRadius:0.1rem;
   span{
     flex:1;
     @include fontFormat($fz: 17px,$fc:#fff,$ta:center);
-    
+
   }
 }
 
@@ -118,24 +118,36 @@ $borderRadius:0.1rem;
   .btn{
     flex:1;
   }
-  .btn-bg-blue{
-    background: #519aec;
-    line-height: 0.6rem;
-    border-radius: 0.08rem;
-    @include fontFormat($fz: 22px,$fc:#fff,$ta:center);
-    font-weight: 400;  
-  }
-  .btn-bg-white{
-    background: #fff;
-    @include fontFormat($fz: 11px,$ta:center);
-    border: 0.01rem solid #979797;
-    line-height: 0.3rem;
-    width: 1rem;
-    border-radius:0.05rem;
-  }
 }
-
-
+.btn-one{
+  display: flex;
+  justify-content: center;
+  padding-top:0.3rem;
+  align-items: center;
+}
+.btn-bg-blue{
+  background: #519aec;
+  line-height: 0.6rem;
+  border-radius: 0.08rem;
+  @include fontFormat($fz: 22px,$fc:#fff,$ta:center);
+  font-weight: 400;
+}
+.btn-bg-white{
+  background: #fff;
+  @include fontFormat($fz: 11px,$ta:center);
+  border: 0.01rem solid #979797;
+  line-height: 0.3rem;
+  width: 1rem;
+  border-radius:0.05rem;
+}
+.btn-bg-white-m{
+  background: #fff;
+  @include fontFormat($fz: 11px,$ta:center);
+  border: 0.01rem solid #979797;
+  line-height: 0.34rem;
+  width: 1.15rem;
+  border-radius:0.05rem;
+}
 //表单
 .el-form {
   background-color: $white;
@@ -148,7 +160,7 @@ $borderRadius:0.1rem;
     align-items: center;
     justify-content: space-between;
     .el-col{
-      flex:1;  
+      flex:1;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -171,7 +183,7 @@ $borderRadius:0.1rem;
       display: inline-block;
       width: auto;
     }
-    
+
     .input-code{
       width:1.4rem;
     }
@@ -184,6 +196,28 @@ $borderRadius:0.1rem;
      @include fontFormat($fz: 12px);
      border:0.01rem solid #c2c2c2;
    }
+  }
+}
+.form-row{
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.17rem 0;
+  label {
+    @include fontFormat($fz: 15px);
+    line-height: 0.34rem;
+    margin-right: 0.17rem;
+  }
+  input.input-box{
+    background: transparent;
+    vertical-align: top;
+    line-height: 0.34rem;
+    height: 0.34rem;
+    outline: none;
+    padding:0 0.06rem;
+    @include fontFormat($fz: 14px);
+    background: #fff;
+    padding: 0 0.1rem;
+    border-radius: 0.04rem;
   }
 }
 //白色右箭头 小

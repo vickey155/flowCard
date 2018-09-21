@@ -1,0 +1,34 @@
+extends layout/layout
+
+block headTitle
+  title 详情
+
+block content
+    - var titleName = '详情';
+    -var headerImgSrc = '12';
+    include layout/header_blue.pug
+    .detail2-sec
+        .sec-card-list
+            .sec-row
+                img.img-pic(src="")
+                .col
+                    .row
+                        label 卡号:
+                        div.font-blue 89860 2B411 16C00 78152
+                    .row
+                        label 号码:
+                        div.font-grey 10640 0904 7350
+        .set-list
+          .title
+          .cont
+            .row
+              img(src="", alt="").icon-img
+              .txt 卡状态
+              .status 关机
+            .row
+              img(src="", alt="").icon-img
+              .txt 剩余天数
+
+
+        .btn-one
+            a(href="javascript:void(0);").btn-bg-white-m 立即充值

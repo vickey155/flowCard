@@ -34,7 +34,7 @@ a, a:link {
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
   -webkit-touch-callout: none;
-  color: #999; }
+  color: #000; }
 
 select, input {
   display: inline-block;

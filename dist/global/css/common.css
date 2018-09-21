@@ -34,7 +34,7 @@ a, a:link {
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
   -webkit-touch-callout: none;
-  color: #999; }
+  color: #000; }
 
 select, input {
   display: inline-block;
@@ -159,13 +159,13 @@ h1 {
         font-size: 17px; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .header-purple span {
-        font-size: 18px; } }
+        font-size: 17px; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .header-purple span {
-        font-size: 20px; } }
+        font-size: 19px; } }
     @media screen and (min-width: 640px) {
       .header-purple span {
-        font-size: 20px; } }
+        font-size: 21px; } }
 
 .ellipsis {
   overflow: hidden;
@@ -208,45 +208,74 @@ h1 {
   padding-top: 0.3rem; }
   .btn-wrap .btn {
     flex: 1; }
-  .btn-wrap .btn-bg-blue {
-    background: #519aec;
-    line-height: 0.6rem;
-    border-radius: 0.08rem;
-    color: #fff;
-    text-align: center;
-    font-weight: 400; }
-    @media screen and (max-width: 321px) {
-      .btn-wrap .btn-bg-blue {
-        font-size: 22px; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .btn-wrap .btn-bg-blue {
-        font-size: 23px; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .btn-wrap .btn-bg-blue {
-        font-size: 25px; } }
-    @media screen and (min-width: 640px) {
-      .btn-wrap .btn-bg-blue {
-        font-size: 25px; } }
-  .btn-wrap .btn-bg-white {
-    background: #fff;
-    color: #000;
-    text-align: center;
-    border: 0.01rem solid #979797;
-    line-height: 0.3rem;
-    width: 1rem;
-    border-radius: 0.05rem; }
-    @media screen and (max-width: 321px) {
-      .btn-wrap .btn-bg-white {
-        font-size: 11px; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .btn-wrap .btn-bg-white {
-        font-size: 12px; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .btn-wrap .btn-bg-white {
-        font-size: 14px; } }
-    @media screen and (min-width: 640px) {
-      .btn-wrap .btn-bg-white {
-        font-size: 14px; } }
+
+.btn-one {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.3rem;
+  align-items: center; }
+
+.btn-bg-blue {
+  background: #519aec;
+  line-height: 0.6rem;
+  border-radius: 0.08rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400; }
+  @media screen and (max-width: 321px) {
+    .btn-bg-blue {
+      font-size: 22px; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .btn-bg-blue {
+      font-size: 22px; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .btn-bg-blue {
+      font-size: 24px; } }
+  @media screen and (min-width: 640px) {
+    .btn-bg-blue {
+      font-size: 26px; } }
+
+.btn-bg-white {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  border: 0.01rem solid #979797;
+  line-height: 0.3rem;
+  width: 1rem;
+  border-radius: 0.05rem; }
+  @media screen and (max-width: 321px) {
+    .btn-bg-white {
+      font-size: 11px; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .btn-bg-white {
+      font-size: 11px; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .btn-bg-white {
+      font-size: 13px; } }
+  @media screen and (min-width: 640px) {
+    .btn-bg-white {
+      font-size: 15px; } }
+
+.btn-bg-white-m {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  border: 0.01rem solid #979797;
+  line-height: 0.34rem;
+  width: 1.15rem;
+  border-radius: 0.05rem; }
+  @media screen and (max-width: 321px) {
+    .btn-bg-white-m {
+      font-size: 11px; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .btn-bg-white-m {
+      font-size: 11px; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .btn-bg-white-m {
+      font-size: 13px; } }
+  @media screen and (min-width: 640px) {
+    .btn-bg-white-m {
+      font-size: 15px; } }
 
 .el-form {
   background-color: #fff; }
@@ -275,13 +304,13 @@ h1 {
           font-size: 16px; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .el-form .el-row .el-label {
-          font-size: 17px; } }
+          font-size: 16px; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .el-form .el-row .el-label {
-          font-size: 19px; } }
+          font-size: 18px; } }
       @media screen and (min-width: 640px) {
         .el-form .el-row .el-label {
-          font-size: 19px; } }
+          font-size: 20px; } }
     .el-form .el-row input {
       background: transparent;
       vertical-align: top;
@@ -298,13 +327,13 @@ h1 {
           font-size: 16px; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .el-form .el-row input {
-          font-size: 17px; } }
+          font-size: 16px; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .el-form .el-row input {
-          font-size: 19px; } }
+          font-size: 18px; } }
       @media screen and (min-width: 640px) {
         .el-form .el-row input {
-          font-size: 19px; } }
+          font-size: 20px; } }
     .el-form .el-row .input-code {
       width: 1.4rem; }
     .el-form .el-row .code-btn {
@@ -321,13 +350,59 @@ h1 {
           font-size: 12px; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .el-form .el-row .code-btn {
-          font-size: 13px; } }
+          font-size: 12px; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .el-form .el-row .code-btn {
-          font-size: 15px; } }
+          font-size: 14px; } }
       @media screen and (min-width: 640px) {
         .el-form .el-row .code-btn {
-          font-size: 15px; } }
+          font-size: 16px; } }
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.17rem 0; }
+  .form-row label {
+    color: #000;
+    text-align: left;
+    line-height: 0.34rem;
+    margin-right: 0.17rem; }
+    @media screen and (max-width: 321px) {
+      .form-row label {
+        font-size: 15px; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .form-row label {
+        font-size: 15px; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .form-row label {
+        font-size: 17px; } }
+    @media screen and (min-width: 640px) {
+      .form-row label {
+        font-size: 19px; } }
+  .form-row input.input-box {
+    background: transparent;
+    vertical-align: top;
+    line-height: 0.34rem;
+    height: 0.34rem;
+    outline: none;
+    padding: 0 0.06rem;
+    color: #000;
+    text-align: left;
+    background: #fff;
+    padding: 0 0.1rem;
+    border-radius: 0.04rem; }
+    @media screen and (max-width: 321px) {
+      .form-row input.input-box {
+        font-size: 14px; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .form-row input.input-box {
+        font-size: 14px; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .form-row input.input-box {
+        font-size: 16px; } }
+    @media screen and (min-width: 640px) {
+      .form-row input.input-box {
+        font-size: 18px; } }
 
 a.arrow-r-white {
   position: relative; }

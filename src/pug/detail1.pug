@@ -1,0 +1,15 @@
+extends layout/layout
+
+block headTitle
+  title 详情
+
+block content
+    -var headerImgSrc = '12';
+    - var titleName = '详情';
+    include layout/header_blue.pug
+    .detail1-sec
+        .form-row
+          label 流量卡iccid号
+          input.input-box(type="text" placeholder="输入iccid号")
+        .btn-one
+            a(href="javascript:void(0);").btn-bg-white-m 确认添加

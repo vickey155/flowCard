@@ -1,5 +1,63 @@
 @import "./common";
-
+.sec-card-list{
+  $cc3:#c3c3c3;
+  .sec-row{
+      background: #fff;
+      padding: 0.11rem 0.15rem;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      margin-top: 0.12rem;
+      .img-pic{
+          height: 0.7rem;
+          width: 0.7rem;
+      }
+      .col{
+          padding:0 0.1rem;
+          flex:1;
+      }
+      .arrow-right{
+          width: 0.1rem;
+          height: 0.16rem;
+      }
+  }
+  .row{
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      margin-bottom: 0.04rem;
+      &:last-child{
+          margin-bottom: 0;
+      }
+      label{
+          @include fontFormat($fz: 18px,$fc:$cc3);
+          padding-right: 0.04rem;
+      }
+      .font-grey{
+          @include fontFormat($fz: 16px,$fc:#989898);
+      }
+      .font-blue{
+          @include fontFormat($fz: 16px,$fc:#519aec);
+      }
+      .icon{
+          @include fontSize($fz: 12px);
+          text-align: center;
+          padding: 0.02rem 0.03rem;
+          border-width: 0.01rem;
+          border-style: solid;
+          border-radius: 0.04rem;
+          margin-right: 0.1rem;
+      }
+      .icon-green{
+          color:#6ec84c;
+          border-collapse: #6ec84c;
+      }
+      .icon-blue{
+          color:#007dff;
+          border-collapse: #007dff;
+      }
+  }
+}
 .login-sec{
     height: 100%;
     background: #fff;
@@ -19,68 +77,51 @@
     }
     .btn-wrap{
         padding-top: 0.75rem;
-    }    
+    }
 }
 .my-sec{
     .btn-wrap{
         padding: 0.3rem 0.5rem;
-    }  
+    }
 }
-.sec-card-list{
-    $cc3:#c3c3c3;
-    .sec-row{
-        background: #fff;
-        padding: 0.11rem 0.15rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 0.12rem;
-        .img-pic{
-            height: 0.7rem;
-            width: 0.7rem;
-        }
-        .col{
-            padding:0 0.1rem;
-            flex:1;
-        }
-        .arrow-right{
-            width: 0.1rem;
-            height: 0.16rem;
-        }
+.detail1-sec{
+  .btn-one{
+    padding-top: 0.47rem;
+  }
+}
+.detail2-sec{
+  .set-list{
+    .title{
+      @include fontFormat($fz: 15px,$fc:#8a8a8a);
+      padding: 0.1rem 0.15rem;
     }
     .row{
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.04rem;
-        &:last-child{
-            margin-bottom: 0;
-        }
-        lable{
-            @include fontFormat($fz: 18px,$fc:$cc3);
-            width: 0.6rem;
-        }
-        .font-grey{
-            @include fontFormat($fz: 16px,$fc:#989898);
-        }
-        .font-blue{
-            @include fontFormat($fz: 16px,$fc:#519aec);
-        }
-        .icon{
-            @include fontSize($fz: 12px);
-            text-align: center;
-            padding: 0.02rem 0.03rem;
-            border-width: 0.01rem;
-            border-style: solid;
-            border-radius: 0.04rem;
-            margin-right: 0.1rem;
-        }
-        .icon-green{
-            color:#6ec84c;
-            border-collapse: #6ec84c;
-        }
-        .icon-blue{
-            color:#007dff;
-            border-collapse: #007dff;
-        }
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.1rem 0.15rem;
+      background: #fff;
+      border-bottom:0.01rem solid #f2f2f2;
+      &:last-child{
+        border-bottom: 0;
+      }
     }
+    img.icon-img{
+      height: 0.28rem;
+      width:0.28rem;
+    }
+    .txt{
+      @include fontFormat($fz: 14px);
+      padding: 0 0.08rem;
+      flex:1;
+    }
+    .status{
+      @include fontFormat($fz: 11px,$fc:#8a8a8a);
+    }
+  }
+}
+
+.recharge-sec{
+
 }
