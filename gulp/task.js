@@ -21,14 +21,14 @@ var handleErrors = function () {
          title:"complie error <%=error.plugin%>",
          message:"<%=error.message%>"
      }).apply(this,args); //替换为当前对象
- 
+
      this.emit('end');//提交
- 
+
  }
 
 gulp.task('style',function(){
 	return gulp.src(config.style.src)
-        .pipe(gulpScss())
+        .pipe(gulpScss(config.style.cfg))
         .on('error',handleErrors)
         .pipe(gulp.dest(config.style.dist));
 });

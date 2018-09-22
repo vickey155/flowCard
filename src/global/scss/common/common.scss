@@ -2,8 +2,10 @@
 html{
   height: 100%;
 }
-body{padding:0; color: #000;background: #F2F2F2;width:100%; min-height:100%; margin:0 auto;}
-
+body{padding:0; color: #000;background: #f6f6f6;width:100%; min-height:100%; margin:0 auto;}
+img{
+  background:#ccc;
+}
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
 .fl{float: left;}
@@ -13,6 +15,10 @@ $white:#fff;
 $c0:#000;
 $c3:#333;
 $borderRadius:0.1rem;
+.flex{
+  display: flex;
+  display: -webkit-flex;
+}
 @mixin opacity_bg($opa:0.8,$col:#000){
   background-color: $col;
   opacity: $opa;
@@ -62,6 +68,21 @@ $borderRadius:0.1rem;
 
   }
 }
+.header-white{
+  background: #fff;
+  display: flex;
+  align-items: center;
+  height: 0.48rem;
+  padding: 0 0.17rem;
+  img{
+    width: 0.2rem;
+    height: 0.2rem;
+  }
+  span{
+    flex:1;
+    @include fontFormat($fz: 17px,$fc:#3f3f3f,$ta:center);
+  }
+}
 
 //省略号
 .ellipsis{
@@ -86,6 +107,51 @@ $borderRadius:0.1rem;
   left: 0;
   width: 100%;
   z-index: 99;
+  background: #fff;
+  @extend .flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.04rem 0.22rem;
+  height: 0.52rem;
+  .col{
+    text-align: center;
+  }
+  .foot_icon{
+    height: 0.25rem;
+    width: 0.25rem;
+  }
+  .name{
+    margin-top: 0.01rem;
+    @include fontFormat($fz: 13px,$fc:#989898,$ta:center);
+  }
+  .btn{
+    flex:1;
+  }
+  .btn-bg-green{
+    @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+    line-height: 0.52rem;
+    background: #01CC35;
+  }
+}
+.fixed_footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  @extend .flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.52rem;
+  .btn{
+    flex:1;
+  }
+  .btn_bg_green{
+    @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+    line-height: 0.52rem;
+    background: #01CC35;
+  }
 }
 //省市区
 .select-region{
@@ -148,6 +214,13 @@ $borderRadius:0.1rem;
   width: 1.15rem;
   border-radius:0.05rem;
 }
+.btn-bg-yellow{
+  padding: 0 0.2rem;
+  background: #FED500;
+  @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
+  border-radius:0.05rem;
+  line-height: 0.34rem;
+}
 //表单
 .el-form {
   background-color: $white;
@@ -203,7 +276,7 @@ $borderRadius:0.1rem;
   align-items: center;
   padding: 0.35rem 0.17rem 0;
   label {
-    @include fontFormat($fz: 15px);
+    @include fontFormat($fz:14px);
     line-height: 0.34rem;
     margin-right: 0.17rem;
   }
@@ -214,7 +287,7 @@ $borderRadius:0.1rem;
     height: 0.34rem;
     outline: none;
     padding:0 0.06rem;
-    @include fontFormat($fz: 14px);
+    @include fontFormat($fz:14px);
     background: #fff;
     padding: 0 0.1rem;
     border-radius: 0.04rem;

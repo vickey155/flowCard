@@ -1,0 +1,41 @@
+extends layout/layout
+
+block headTitle
+  title
+
+block content
+  - var titleName = '预约办卡';
+  include layout/header_white.pug
+  .bookBank
+    .bank_item
+      img.bank_icon(src="")
+      .bank_name 光大银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 华夏银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 浦发银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 招商银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 兴业银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 民生银行
+      img.bank_selected(src="")
+    .bank_item
+      img.bank_icon(src="", alt="")
+      .bank_name 中国银行
+      img.bank_selected(src="")
+
+  .book_fixed_footer
+    .footer_txt 您预约的银行
+    a(href="javascript:void(0);").bookBtn 确定

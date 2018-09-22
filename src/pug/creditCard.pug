@@ -1,0 +1,92 @@
+extends layout/layout
+
+block headTitle
+  title
+
+block content
+  - var titleName = '信用卡';
+  include layout/header_white.pug
+  .creditCard
+    .banner
+      img(src="", alt="")
+
+    .swiper_sec
+      .item
+        p.name 办卡送拉杆箱
+        p.state 便捷申卡额度高
+        img(src="", alt="")
+
+    .bankList
+      .title
+        span.txt 热门银行
+        a(href="javascript:void(0);").a_link 全部信用卡
+      .list_cont
+        a(href="javascript:void(0);").bank_item
+          span.red_bg_icon 高额
+          img(src="", alt="").bank_icon
+          p.name 中信银行
+          p.state 双12必备大额卡
+        a(href="javascript:void(0);").bank_item
+          span.red_bg_icon 秒批
+          img(src="", alt="").bank_icon
+          p.name 平安银行
+          p.state 周三享5折
+        a(href="javascript:void(0);").bank_item
+          span.red_bg_icon 易下
+          img(src="", alt="").bank_icon
+          p.name 光大银行
+          p.state 周三狠简单
+        a(href="javascript:void(0);").bank_item
+          img(src="", alt="").bank_icon
+          p.name 浦发银行
+          p.state 网络申请 当天下卡
+        a(href="javascript:void(0);").bank_item
+          img(src="", alt="").bank_icon
+          p.name 兴业银行
+          p.state 5分钟极速办卡
+        a(href="javascript:void(0);").bank_item
+          span.red_bg_icon hot
+          img(src="", alt="").bank_icon
+          p.name 民生银行
+          p.state 天天民生日
+        a(href="javascript:void(0);").bank_item
+          img(src="", alt="").bank_icon
+          p.name 交通银行
+          p.state 星期五优惠5%
+        a(href="javascript:void(0);").bank_item
+          span.red_bg_icon 返现
+          img(src="", alt="").bank_icon
+          p.name 工商银行
+          p.state 新用户返现66元
+        a(href="javascript:void(0);").bank_item
+          img(src="", alt="").bank_icon
+          p.name 华夏银行
+          p.state 88积分享星巴克
+
+    .optsList
+      a(href="javascript:void(0);").col
+        img(src="", alt="").opt_icon
+        p.name 预约办卡
+      a(href="javascript:void(0);").col
+        img(src="", alt="").opt_icon
+        p.name 进度查询
+      a(href="javascript:void(0);").col
+        img(src="", alt="").opt_icon
+        p.name 办卡攻略
+
+
+  .fixed-footer
+    .col
+      img(src="", alt="").foot_icon
+      p.name 附近商户
+    .col
+      img(src="", alt="").foot_icon
+      p.name 贷款超市
+    .col
+      img(src="", alt="").foot_icon
+      p.name 信用卡
+    .col
+      img(src="", alt="").foot_icon
+      p.name 我的
+
+

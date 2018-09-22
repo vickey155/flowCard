@@ -1,0 +1,40 @@
+extends layout/layout
+
+block headTitle
+  title 工作信息
+
+block content
+  - var titleName = '工作信息';
+  include layout/header_white.pug
+  .baseInfo.infoSec
+    .sec
+      .sec_title 工作单位性质
+      .sec_cont
+        .elem.active 国有
+        .elem 机关事业
+        .elem 外商独资
+        .elem 民营
+        .elem 合资／合作
+        .elem 股份制
+        .elem 个体私营
+        .elem 其他
+    .sec
+      .sec_title 社保情况
+      .sec_cont
+        .elem 无
+        .elem 连续缴纳3个月
+        .elem 连续缴纳半年
+        .elem 连续缴纳1年
+        .elem 连续缴纳1年以上
+    .sec
+      .sec_title 可提供工作证明
+      .sec_cont
+        .elem 工牌
+        .elem 营业执照
+        .elem 工作证明
+        .elem 名片
+        .elem 无工作证明
+
+
+  .fixed_footer
+    a(href="javascript:void(0);").btn.btn_bg_green 下一步

@@ -7,6 +7,7 @@ var dist = 'dist';
 
 //default paths in src folder
 var scss = 'global/scss';
+var scssCom = 'global/scss/common';
 var pug = 'pug';
 var layout = 'layout';
 
@@ -48,11 +49,11 @@ module.exports.image = {
 
 
 module.exports.style = {
-	src: path.join(src,scss,'/**/*.scss'),
+  src: [path.join(src,scss,'/**/*.scss'),'!'+path.join(src,scssCom,'/**/*.scss')],
 	dist: path.join(dist,css),
-	scssCfg:{
-
-	}
+	cfg:{
+    outputStyle:'compressed' // 默认 nested 继承，compact 紧凑，expanded 展开，compressed 压缩
+  }
 };
 
 module.exports.template = {

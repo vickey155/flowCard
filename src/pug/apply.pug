@@ -1,0 +1,50 @@
+extends layout/layout
+
+block headTitle
+    title 申请信息
+
+block content
+  - var titleName = '申请信息';
+  include layout/header_white.pug
+  .applyInfo
+    .sec_top
+      img.bg(src="", alt="")
+      .sec_cont
+        img.avater(src="", alt="")
+        p.name 1212
+
+    .sec_form
+      .title 填写个人申请资料
+      .el-form
+        .el-row
+          label.el-label 姓名
+          .el-col
+            input.input-txt(type="text" placeholder="请输入您的姓名")
+        .el-row
+          label.el-label 身份证号
+          .el-col
+            input.input-txt(type="text" placeholder="请输入您的身份证")
+        .el-row
+          label.el-label 手机号
+          .el-col
+            input.input-txt(type="text" placeholder="请输入常用手机号码")
+        .el-row
+          .el-col
+            input.input-code(type="text" placeholder="请输入验证码")
+            a(href="javascript:void(0)").btn-bg-yellow 获取验证码
+
+    .sec_agreen
+      .check_wrap
+        input(type="checkBox")
+        img.check_selected(src="", alt="")
+      .agreen_name 我已认真阅读并完全同意：<a class="font_yellow" href="">《众银家平台服务协议》</a><br/>的所有条款
+
+    .sec_tips
+      .title 注意事项
+      .sec_cont
+        p 1、必须填写真实个人信息，否则无法在平台办理任何业务。
+        p 2、收到办卡审核通知短信，第二个工作日查到进度并提示“等待工作人员审核”，将有机会拆红包。
+        p 3、在众银家申请信用卡不收取任何费用，凡是索取均为欺诈，请不要相信！
+
+    .btn-wrap
+        a(href="javascript:void(0);").btn.btn-bg-yellow 提交资料

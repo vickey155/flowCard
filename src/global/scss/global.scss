@@ -1,4 +1,4 @@
-@import "./common";
+@import "./common/common.scss";
 .sec-card-list{
   $cc3:#c3c3c3;
   .sec-row{
@@ -123,5 +123,453 @@
 }
 
 .recharge-sec{
+  .sec-cont{
+    padding: 0.15rem 0.15rem 0.83rem;
+    background: #fff;
+  }
+  .card{
+    width: 100%;
+    background: #fff;
+    height: 1.86rem;
+    padding: 0.04rem 0 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border:0.025rem solid #EE823B;
+    border-radius: 0.06rem;
+    .trange-left-bottom{
+      $pos:0.64rem;
+      width:$pos;
+      height: $pos - 0.2rem;
+      position: absolute;
+      left:0;
+      bottom:0;
+      z-index: 2;
+      overflow: hidden;
+      background: #fff;
+      -webkit-transform:translate(-0.25rem,.16rem) rotate(45deg);
+      border-top:0.025rem solid #EE823B;
+    }
+    .tips-red{
+      position: absolute;
+      left: 0;
+      bottom: 0.1rem;
+      width: 100%;
+      @include fontFormat($fz: 10px,$fc:#d34a4a,$ta:center);
 
+    }
+    .col{
+      flex:1;
+      text-align: center;
+      padding: 0;
+    }
+    .name{
+      @include fontFormat($fz: 12px,$fc:#686868,$ta:center);
+    }
+    .no{
+      @include fontFormat($fz: 28px,$fc:#519AEC,$ta:center);
+      border-right:0.025rem solid #EE823B;
+      padding: 0.02rem 0.2rem;
+
+    }
+    .icon-card{
+      width: 1.06rem;
+      height: 1.09rem;
+      margin-top: 0.24rem;
+    }
+  }
+  .list{
+    padding: 0.28rem 0 0;
+    background: #fff;
+    width: 100%;
+    .flex{
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+    }
+    .row{
+      border-bottom:0.01rem solid #f2f2f2;
+      padding: 0 0.01rem;
+      label{
+        line-height: 0.4rem;
+        @include fontFormat($fz: 14px,$fc:#686868);
+      }
+      .txt{
+        line-height: 0.4rem;
+        @include fontFormat($fz: 12px,$fc:#EE823B);
+        flex:1;
+      }
+      .row-tips{
+        @include fontFormat($fz: 11px,$fc:#989898);
+        padding: 0rem 0 0.13rem;
+
+      }
+    }
+  }
+  .btn-one{
+    padding-top: 0.45rem;
+  }
+}
+
+.creditCard{
+  padding-bottom: 0.62rem;
+  .banner{
+    width: 100%;
+  }
+  .swiper_sec{
+    background: #fff;
+    padding: 0.11rem 0.22rem;
+    .item{
+      padding: 0.21rem;
+      p{
+        text-align: center;
+      }
+      .name{
+        @include fontSize($fz:14px);
+        color:#676767;
+      }
+      .state{
+        @include fontSize($fz:11px);
+        color:#989898;
+      }
+      img{
+        height: 0.5rem;
+        width: 0.82rem;
+      }
+    }
+  }
+  .bankList{
+    margin-top: 0.1rem;
+    background: #fff;
+    .title{
+      padding: 0.07rem 0.2rem;
+      @extend .flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 0.01rem solid #f2f2f2;
+      .txt{
+        @include fontFormat($fz: 14px,$fc:#676767);
+      }
+      .a_link{
+        @include fontFormat($fz: 11px,$fc:#c3c3c3);
+      }
+    }
+    .list_cont{
+      @extend .flex;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      padding: 0.05rem 0;
+      .bank_item{
+        text-align: center;
+        width: 1.2rem;
+        padding: 0.05rem 0.24rem;
+        position: relative;
+        .red_bg_icon{
+          position: absolute;
+          left: 50%;
+          margin-left:0.1rem;
+          top:0;
+          background: #F34250;
+          padding: 0.02rem 0.04rem 0.02rem 0.06rem;
+          border-radius: 0.04rem;
+          border-bottom-left-radius: 0;
+          @include fontFormat($fz: 8px,$fc:#fff);
+        }
+        .bank_icon{
+          height: 0.44rem;
+          width:0.44rem;
+        }
+        .name{
+          @include fontFormat($fz: 13px,$ta:center);
+        }
+        .state{
+          margin-top: 0.02rem;
+          @extend .ellipsis;
+          @include fontFormat($fz: 10px,$fc:#c3c3c3,$ta:center);
+        }
+      }
+    }
+  }
+  .optsList{
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 0.34rem;
+    background: #fff;
+    margin-top: 0.1rem;
+    .col{
+      text-align: center;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0.9rem;
+        top:0.02rem;
+        height: 0.41rem;
+        width: 0.01rem;
+        border-right:0.01rem solid #f2f2f2;
+      }
+      &:last-child{
+        &::after{
+          border:0;
+        }
+      }
+
+    }
+    .opt_icon{
+      width: 0.44rem;
+      height: 0.44rem;
+    }
+    .name{
+      margin-top: 0.04rem;
+      @include fontFormat($fz: 13px,$ta:center);
+    }
+  }
+}
+.queryProgress{
+  .banner{
+    width: 100%;
+  }
+  .tips_yellow{
+    padding: 0.05rem;
+    background: #F8E8B9;
+    @include fontFormat($fz: 11px,$fc:#686868,$ta:center);
+  }
+  .bankList{
+    background: #fff;
+    @extend .flex;
+    justify-content: space-between;
+    flex-flow:row wrap;
+    padding-bottom: 0.3rem;
+    .col{
+      width: 50%;
+      border-bottom:0.01rem solid #f2f2f2;
+      border-right: 0.01rem solid #f2f2f2;
+      &:nth-child(even){
+        border-right: 0;
+      }
+      @extend .flex;
+      align-items: center;
+      padding: 0.1rem 0.15rem;
+    }
+    .bank_icon{
+      width: 0.35rem;
+      height: 0.35rem;
+    }
+    .bank_name{
+      padding-left: 0.04rem;
+      @include fontFormat($fz: 14px,$fc:#686868);
+    }
+  }
+}
+.bookBank{
+  background:#fff;
+  .bank_item{
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 0.15rem;
+    border-bottom:0.01rem solid #f2f2f2;
+  }
+  .bank_icon{
+    height: 0.35rem;
+    width: 0.35rem;
+  }
+  .bank_name{
+    padding-left: 0.04rem;
+    @include fontFormat($fz: 14px,$fc:#686868);
+  }
+  .bank_selected{
+    height: 0.32rem;
+    width: 0.32rem;
+    margin-right: 0.05rem;
+  }
+}
+.book_fixed_footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  @extend .flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.52rem;
+  .footer_txt {
+    line-height: 0.52rem;
+    padding-left:0.15rem ;
+    @include fontFormat($fz: 18px,$fc:#686868);
+    flex:1;
+  }
+  .bookBtn{
+    width: 1rem;
+    height: 100%;
+    background: #E7E7E7;
+    line-height: 0.52rem;
+    @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+  }
+  .bookBtn_yellow{
+    background: #FED500;
+  }
+}
+.applyInfo{
+  .title{
+    padding: 0.1rem 0.15rem;
+    @include fontFormat($fz:15px,$fc:#646464);
+  }
+  .sec_top{
+    background: #393A3E;
+    height: 1.81rem;
+    position: relative;
+    img.bg{
+      height: 100%;
+      width: 100%;
+      display: none;
+    }
+    .sec_cont{
+      position: absolute;
+      left: 0;
+      top:0;
+      width:100%;
+      height:100%;
+      z-index: 2;
+      @extend .flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      .avater{
+        height: 0.73rem;
+        width: 0.73rem;
+        border:0.06rem solid #4A4A4D;
+        border-radius: 50%;
+      }
+      .name{
+        @include fontFormat($fz: 17px,$fc:#E0E0E0,$ta:center);
+        margin-top: 0.1rem;
+      }
+    }
+  }
+  .sec_form{
+    .el-form{
+      margin: 0 0.07rem;
+      padding:0.07rem 0.2rem;
+      background: #fff;
+      input.input-txt{
+        width: 100%;
+        line-height: 0.22rem;
+        height: 0.22rem;
+        @include fontFormat($fz: 14px,$ta: right);
+
+      }
+      input.input-code{
+        line-height: 0.22rem;
+        height: 0.22rem;
+        @include fontFormat($fz: 14px);
+      }
+      .el-label {
+        @include fontFormat($fz: 14px);
+        line-height: 0.22rem;
+      }
+      a.btn-bg-yellow{
+        padding: 0 0.1rem;
+        background: #FED500;
+        @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
+        border-radius:0.05rem;
+        line-height: 0.22rem
+      }
+
+    }
+  }
+  .sec_agreen{
+    @extend .flex;
+    align-items: center;
+    padding: 0.08rem 0.2rem;
+    margin: 0.13rem 0.07rem 0;
+    background:#fff;
+    .check_wrap{
+      width: 0.16rem;
+      height: 0.16rem;
+      border:0.01rem solid #666;
+      position: relative;
+      input[type=checkbox]{
+        z-index: 2;
+        position: absolute;
+        left: -0.01rem;
+        top:-.01rem;
+        width: 0.16rem;
+        height: 0.16rem;
+        opacity: 0.5;
+        background: red;
+      }
+      img.check_selected{
+        z-index: 1;
+        position: absolute;
+        left: -0.01rem;
+        top:-.01rem;
+        width: 0.16rem;
+        height: 0.16rem;
+      }
+    }
+    .agreen_name{
+      @include fontFormat($fz: 12px,$fc:#989898);
+      padding-left: 0.14rem;
+      word-break:break-all;
+      word-wrap:break-word ;
+      a.font_yellow{
+        display: inline;
+        @include fontFormat($fz: 12px,$fc:#F8C513);
+      }
+    }
+  }
+  .sec_tips{
+    .sec_cont{
+      background: #fff;
+      padding: 0.1rem 0.13rem;
+      p{
+        @include fontFormat($fz: 12px,$fc:#989898);
+        line-height: 0.2rem;
+      }margin: 0 0.15rem;
+    }
+  }
+  .btn-wrap{
+    margin: 0.3rem 0.15rem;
+    width: auto;
+    background: #fff;
+    padding: 0.07rem 0.3rem;
+    .btn-bg-yellow{
+      line-height: 0.35rem;
+      @include fontFormat($fz: 14px,$fc:#fff,$ta:center);
+    }
+  }
+}
+
+.infoSec{
+  padding-bottom: 0.52rem;
+  .sec_title{
+    @include fontFormat($fz: 16px,$fc:#4E4E4E,$ta:center);
+    padding: 0.14rem;
+  }
+  .sec_cont{
+    @extend .flex;
+    flex-flow: row wrap;
+    border-top:0.01rem solid #f2f2f2;
+    border-left:0.01rem solid #f2f2f2;
+    .elem{
+      background: #fff;
+      width: 33%;
+      padding: 0.08rem;
+      @include fontFormat($fz: 14px,$fc:#4E4E4E,$ta:center);
+      border-bottom: 0.01rem solid #f2f2f2;
+      border-right: 0.01rem solid #f2f2f2;
+      &:nth-child(3n+0){
+        width: 34%;
+        border-right:0;
+      }
+      &.active{
+        @include fontFormat($fz: 14px,$fc:#01CC35,$ta:center);
+
+      }
+    }
+  }
 }
