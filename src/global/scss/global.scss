@@ -472,6 +472,7 @@
         line-height: 0.22rem;
       }
       a.btn-bg-yellow{
+        min-width: 0.8rem;
         padding: 0 0.1rem;
         background: #FED500;
         @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
@@ -500,7 +501,6 @@
         width: 0.16rem;
         height: 0.16rem;
         opacity: 0.5;
-        background: red;
       }
       img.check_selected{
         z-index: 1;
@@ -548,7 +548,7 @@
   padding-bottom: 0.52rem;
   .sec_title{
     @include fontFormat($fz: 16px,$fc:#4E4E4E,$ta:center);
-    padding: 0.14rem;
+    padding: 0.11rem;
   }
   .sec_cont{
     @extend .flex;
@@ -568,7 +568,7 @@
       }
       &.active{
         @include fontFormat($fz: 14px,$fc:#01CC35,$ta:center);
-
+        font-weight: bold;
       }
     }
   }

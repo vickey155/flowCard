@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/global.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
@@ -29,17 +29,39 @@
         <div class="el-row">
           <label class="el-label">账号</label>
           <div class="el-col">
-            <input class="input-txt" type="text" placeholder="手机号">
+            <input class="input-txt" id="account" type="text" placeholder="手机号">
           </div>
         </div>
         <div class="el-row">
           <label class="el-label">密码</label>
           <div class="el-col">
-            <input class="input-code" type="text" placeholder="短信验证码"><a class="code-btn" href="javascript:void(0)">发送短信验证码</a>
+            <input class="input-code" id="password" type="text" placeholder="短信验证码"><a class="code-btn" href="javascript:void(0)" id="codeBtn">发送短信验证码</a><a class="code-btn" href="javascript:void(0)" style="display:none;" id="codeTimeBtn"><i>120</i>秒</a>
           </div>
         </div>
       </div>
       <div class="btn-wrap"><a class="btn btn-bg-blue" href="javascript:void(0);">登录</a></div>
     </div>
+    <script>
+      $(function(){
+        countTime.init(120);
+        var phoneReg = /^1[34578]\d{9}$/;
+        $(".btn-bg-blue ").onClick('click',function(){
+          var account = $.trim($("#account").val());
+          var password = $.trim($("#password").val());
+          if(account == ''){
+            layer.sure('请填写手机号');
+            return false;
+          }
+          else if(!phoneReg.test(account)){
+            layer.sure('请填写正确的手机号');
+            return false;
+          }
+          if(password == ''){
+            layer.sure('请填写验证码');
+            return false;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

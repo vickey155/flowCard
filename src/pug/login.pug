@@ -4,19 +4,43 @@ block headTitle
     title 登陆
 
 block content
-    .login-sec
-        .pic-wrap
-            img(src="", alt="")
-        .el-form
-            .el-row
-                label.el-label 账号
-                .el-col
-                    input.input-txt(type="text" placeholder="手机号")
-            .el-row
-                label.el-label 密码
-                .el-col
-                    input.input-code(type="text" placeholder="短信验证码")
-                    a(href="javascript:void(0)").code-btn 发送短信验证码
+  .login-sec
+      .pic-wrap
+          img(src="", alt="")
+      .el-form
+          .el-row
+              label.el-label 账号
+              .el-col
+                  input.input-txt#account(type="text" placeholder="手机号")
+          .el-row
+              label.el-label 密码
+              .el-col
+                  input.input-code#password(type="text" placeholder="短信验证码")
+                  a(href="javascript:void(0)").code-btn#codeBtn 发送短信验证码
+                  a(href="javascript:void(0)" style="display:none;").code-btn#codeTimeBtn <i>120</i>秒
 
-        .btn-wrap
-            a(href="javascript:void(0);").btn.btn-bg-blue 登录
+      .btn-wrap
+          a(href="javascript:void(0);").btn.btn-bg-blue 登录
+
+block footer
+  script.
+    $(function(){
+      countTime.init(120);
+      var phoneReg = /^1[34578]\d{9}$/;
+      $(".btn-bg-blue ").onClick('click',function(){
+        var account = $.trim($("#account").val());
+        var password = $.trim($("#password").val());
+        if(account == ''){
+          layer.sure('请填写手机号');
+          return false;
+        }
+        else if(!phoneReg.test(account)){
+          layer.sure('请填写正确的手机号');
+          return false;
+        }
+        if(password == ''){
+          layer.sure('请填写验证码');
+          return false;
+        }
+      });
+    });

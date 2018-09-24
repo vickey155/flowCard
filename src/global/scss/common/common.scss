@@ -69,7 +69,7 @@ $borderRadius:0.1rem;
   }
 }
 .header-white{
-  background: #fff;
+  background: #f6f6f6;
   display: flex;
   align-items: center;
   height: 0.48rem;
@@ -191,14 +191,14 @@ $borderRadius:0.1rem;
   padding-top:0.3rem;
   align-items: center;
 }
-.btn-bg-blue{
+a.btn-bg-blue{
   background: #519aec;
   line-height: 0.6rem;
   border-radius: 0.08rem;
   @include fontFormat($fz: 22px,$fc:#fff,$ta:center);
   font-weight: 400;
 }
-.btn-bg-white{
+a.btn-bg-white{
   background: #fff;
   @include fontFormat($fz: 11px,$ta:center);
   border: 0.01rem solid #979797;
@@ -206,7 +206,7 @@ $borderRadius:0.1rem;
   width: 1rem;
   border-radius:0.05rem;
 }
-.btn-bg-white-m{
+a.btn-bg-white-m{
   background: #fff;
   @include fontFormat($fz: 11px,$ta:center);
   border: 0.01rem solid #979797;
@@ -214,7 +214,7 @@ $borderRadius:0.1rem;
   width: 1.15rem;
   border-radius:0.05rem;
 }
-.btn-bg-yellow{
+a.btn-bg-yellow{
   padding: 0 0.2rem;
   background: #FED500;
   @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
@@ -266,7 +266,7 @@ $borderRadius:0.1rem;
      min-width: 1rem;
      line-height: 0.28rem;
      height: 0.28rem;
-     @include fontFormat($fz: 12px);
+     @include fontFormat($fz: 12px,$ta:center);
      border:0.01rem solid #c2c2c2;
    }
   }
@@ -312,3 +312,48 @@ a.arrow-r-white{
   }
 }
 
+// 弹层
+.layer-pop{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index: 999;
+  background: rgba(0,0,0,0.4);
+  .layer-box{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-65%);
+    background: #fff;
+    border-radius: 0.06rem;
+    min-width: 2.4rem;
+    max-width: 4rem;
+    .layer-cont{
+      padding: 0.24rem 0.34rem;
+      min-height: 0.6rem;
+      @extend .flex;
+      align-items: center;
+      justify-content: center;
+    }
+    p{
+      @include fontFormat($fz:15px,$ta:center);
+      padding: 0.025rem 0;
+    }
+  }
+  .layer-btn{
+    @extend .flex;
+    justify-content:space-between;
+    border-top:0.01rem solid #ddd;
+    a{
+      flex:1;
+      line-height: 0.44rem;
+      @include fontFormat($fz:14px,$ta:center);
+      border-right:0.01rem solid #ddd;
+      &:last-child{
+        border:0;
+      }
+    }
+  }
+}

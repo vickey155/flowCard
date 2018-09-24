@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/global.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
@@ -36,31 +36,31 @@
           <div class="el-row">
             <label class="el-label">姓名</label>
             <div class="el-col">
-              <input class="input-txt" type="text" placeholder="请输入您的姓名">
+              <input class="input-txt" id="name" type="text" placeholder="请输入您的姓名">
             </div>
           </div>
           <div class="el-row">
             <label class="el-label">身份证号</label>
             <div class="el-col">
-              <input class="input-txt" type="text" placeholder="请输入您的身份证">
+              <input class="input-txt" id="cid" type="text" placeholder="请输入您的身份证">
             </div>
           </div>
           <div class="el-row">
             <label class="el-label">手机号</label>
             <div class="el-col">
-              <input class="input-txt" type="text" placeholder="请输入常用手机号码">
+              <input class="input-txt" id="telephone" type="text" placeholder="请输入常用手机号码">
             </div>
           </div>
           <div class="el-row">
             <div class="el-col">
-              <input class="input-code" type="text" placeholder="请输入验证码"><a class="btn-bg-yellow" href="javascript:void(0)">获取验证码</a>
+              <input class="input-code" id="code" type="text" placeholder="请输入验证码"><a class="btn-bg-yellow" href="javascript:void(0)" id="codeBtn">获取验证码</a><a class="btn-bg-yellow" href="javascript:void(0)" style="display:none;" id="codeTimeBtn"><i>120</i>秒</a>
             </div>
           </div>
         </div>
       </div>
       <div class="sec_agreen">
         <div class="check_wrap">
-          <input type="checkBox"><img class="check_selected" src="" alt="">
+          <input type="checkBox" id="agreenCheck"><img class="check_selected" src="" alt="">
         </div>
         <div class="agreen_name">我已认真阅读并完全同意：<a class="font_yellow" href="">《众银家平台服务协议》</a><br/>的所有条款</div>
       </div>
@@ -74,5 +74,59 @@
       </div>
       <div class="btn-wrap"><a class="btn btn-bg-yellow" href="javascript:void(0);">提交资料</a></div>
     </div>
+    <script>
+      $(function(){
+        countTime.init(6);
+        $("#agreenCheck").prop('checked',true);
+        $("#agreenCheck").onClick('change',function(){
+          var self = $(this);
+          if(self.prop('checked')){
+            self.parent().find('.check_selected').show();
+          }
+          else{
+            self.parent().find('.check_selected').hide();
+      
+          }
+        });
+        var phoneReg = /^1[34578]\d{9}$/;
+        var cidReg = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
+        $(".btn-bg-yellow").onClick('click',function(){
+          var nameVal = $.trim($("#name").val());
+          var cidVal = $.trim($("#cid").val());
+          var telephoneVal = $.trim($("#telephone").val());
+          var codeVal = $.trim($("#code").val());
+          var agreeCheckBox = $("#agreenCheck");
+          if(nameVal == ''){
+            layer.sure('请填写姓名');
+            return false;
+          }
+          if(cidVal == ''){
+            layer.sure('请填写身份证号码');
+            return false;
+          }
+          else if(!cidReg.test(cidVal)){
+            layer.sure('请填写正确的身份证号码');
+            return false;
+          }
+          if(telephoneVal == ''){
+            layer.sure('请填写手机号');
+            return false;
+          }
+          else if(!phoneReg.test(telephoneVal)){
+            layer.sure('请填写正确的手机号');
+            return false;
+          }
+          if(codeVal == ''){
+            layer.sure('请填写验证码');
+            return false;
+          }
+          if(!agreeCheckBox.prop('checked')){
+            layer.sure('请勾选条款');
+            return false;
+          }
+          console.log('submit!')
+        });
+      });
+    </script>
   </body>
 </html>
