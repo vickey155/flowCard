@@ -38,7 +38,7 @@ block content
     .sec_agreen
       .check_wrap
         input(type="checkBox")#agreenCheck
-        img.check_selected(src="", alt="")
+        img.check_selected(src="../global/image/selected_rd.png", alt="")
       .agreen_name 我已认真阅读并完全同意：<a class="font_yellow" href="">《众银家平台服务协议》</a><br/>的所有条款
 
     .sec_tips
@@ -49,14 +49,14 @@ block content
         p 3、在众银家申请信用卡不收取任何费用，凡是索取均为欺诈，请不要相信！
 
     .btn-wrap
-        a(href="javascript:void(0);").btn.btn-bg-yellow 提交资料
+        a(href="javascript:void(0);").btn.btn-bg-yellow#submitBtn 提交资料
 
 block footer
   script.
-    $(function(){
+    $(function() {
       countTime.init(6);
       $("#agreenCheck").prop('checked',true);
-      $("#agreenCheck").onClick('change',function(){
+      $("#agreenCheck").onClick('change',function() {
         var self = $(this);
         if(self.prop('checked')){
           self.parent().find('.check_selected').show();
@@ -68,7 +68,7 @@ block footer
       });
       var phoneReg = /^1[34578]\d{9}$/;
       var cidReg = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
-      $(".btn-bg-yellow").onClick('click',function(){
+      $("#submitBtn").onClick('click',function() {
         var nameVal = $.trim($("#name").val());
         var cidVal = $.trim($("#cid").val());
         var telephoneVal = $.trim($("#telephone").val());

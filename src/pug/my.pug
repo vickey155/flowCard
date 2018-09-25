@@ -5,12 +5,12 @@ block append headTitle
 
 block content
     - var titleName = '1755728695222www';
-    -var headerImg = 'back';
+    -var headerImg = 'person';
     include layout/header_blue.pug
     .my-sec
         .sec-card-list
             .sec-row
-                img.img-pic(src="")
+                img.img-pic(src="../global/image/icon_yidong.png")
                 .col
                     .row
                         label 卡号:
@@ -21,7 +21,7 @@ block content
                     .row
                         span.icon.icon-green 关机
                         span.icon.icon-blue 关机
-                img.arrow-right(src="")
+                img.arrow-right(src="../global/image/arrow_right.png")
         .btn-wrap
             a(href="javascript:void(0);").btn-bg-white 扫码添加
             a(href="javascript:void(0);").btn-bg-white 手工添加

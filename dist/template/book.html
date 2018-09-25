@@ -23,32 +23,48 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="" alt=""><span>预约办卡</span></div>
-    <div class="bookBank">
-      <div class="bank_item"><img class="bank_icon" src="">
-        <div class="bank_name">光大银行</div><img class="bank_selected" src="">
+    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>预约办卡</span></div>
+    <div class="bookBank" id="list">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/guangda.png">
+        <div class="bank_name">光大银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">华夏银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/huaxia.png" alt="">
+        <div class="bank_name">华夏银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">浦发银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/pufa.png" alt="">
+        <div class="bank_name">浦发银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">招商银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/zhaoshang.png" alt="">
+        <div class="bank_name">招商银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">兴业银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/xingye.png" alt="">
+        <div class="bank_name">兴业银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">民生银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/minsheng.png" alt="">
+        <div class="bank_name">民生银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
-      <div class="bank_item"><img class="bank_icon" src="" alt="">
-        <div class="bank_name">中国银行</div><img class="bank_selected" src="">
+      <div class="bank_item" data-id="1"><img class="bank_icon" src="../global/image/colorBank/zhongguo.png" alt="">
+        <div class="bank_name">中国银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
       </div>
     </div>
     <div class="book_fixed_footer">
       <div class="footer_txt">您预约的银行</div><a class="bookBtn" href="javascript:void(0);">确定</a>
     </div>
+    <script>
+      $(function(){
+        var selectId = null;
+        $("#list").onClick('click','.bank_item',function() {
+          var self = $(this);
+          selectId = self.attr('data-id');
+          self.addClass('active').siblings().removeClass('active');
+          if(selectId) {
+            $(".book_fixed_footer .bookBtn").addClass('bookBtn_yellow');
+          }
+        });
+        $(".book_fixed_footer").onClick('click','.bookBtn_yellow',function() {
+          console.log('booked');
+        })
+      });
+    </script>
   </body>
 </html>

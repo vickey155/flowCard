@@ -23,42 +23,57 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="" alt=""><span>工作信息</span></div>
+    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>工作信息</span></div>
     <div class="baseInfo infoSec">
-      <div class="sec">
+      <div class="sec" data-name="company">
         <div class="sec_title">工作单位性质</div>
         <div class="sec_cont">
-          <div class="elem active">国有</div>
-          <div class="elem">机关事业</div>
-          <div class="elem">外商独资</div>
-          <div class="elem">民营</div>
-          <div class="elem">合资／合作</div>
-          <div class="elem">股份制</div>
-          <div class="elem">个体私营</div>
-          <div class="elem">其他</div>
+          <div class="elem" data-type="01">国有</div>
+          <div class="elem" data-type="02">机关事业</div>
+          <div class="elem" data-type="03">外商独资</div>
+          <div class="elem" data-type="04">民营</div>
+          <div class="elem" data-type="05">合资／合作</div>
+          <div class="elem" data-type="06">股份制</div>
+          <div class="elem" data-type="07">个体私营</div>
+          <div class="elem" data-type="other">其他</div>
         </div>
       </div>
-      <div class="sec">
+      <div class="sec" data-name="socialSecurity">
         <div class="sec_title">社保情况</div>
         <div class="sec_cont">
-          <div class="elem">无</div>
-          <div class="elem">连续缴纳3个月</div>
-          <div class="elem">连续缴纳半年</div>
-          <div class="elem">连续缴纳1年</div>
-          <div class="elem">连续缴纳1年以上</div>
+          <div class="elem" data-type="01">无</div>
+          <div class="elem" data-type="02">连续缴纳3个月</div>
+          <div class="elem" data-type="03">连续缴纳半年</div>
+          <div class="elem" data-type="04">连续缴纳1年</div>
+          <div class="elem" data-type="other">连续缴纳1年以上</div>
         </div>
       </div>
-      <div class="sec">
+      <div class="sec" data-name="workProof">
         <div class="sec_title">可提供工作证明</div>
         <div class="sec_cont">
-          <div class="elem">工牌</div>
-          <div class="elem">营业执照</div>
-          <div class="elem">工作证明</div>
-          <div class="elem">名片</div>
-          <div class="elem">无工作证明</div>
+          <div class="elem" data-type="01">工牌</div>
+          <div class="elem" data-type="02">营业执照</div>
+          <div class="elem" data-type="03">工作证明</div>
+          <div class="elem" data-type="04">名片</div>
+          <div class="elem" data-type="other">无工作证明</div>
         </div>
       </div>
     </div>
     <div class="fixed_footer"><a class="btn btn_bg_green" href="javascript:void(0);">下一步</a></div>
+    <script>
+      $(function() {
+        var sendData = {};
+        $(".sec").onClick('click','.elem',function() {
+          var self = $(this);
+          var selfParent = self.closest('.sec');
+          self.addClass('active').siblings('.elem').removeClass('active');
+          var name = selfParent.attr('data-name');
+          var type = self.attr('data-type');
+          sendData[name] = type;
+          console.log(sendData);
+        });
+      
+      });
+    </script>
   </body>
 </html>

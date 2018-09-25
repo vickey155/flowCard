@@ -6,36 +6,53 @@ block headTitle
 block content
   - var titleName = '预约办卡';
   include layout/header_white.pug
-  .bookBank
-    .bank_item
-      img.bank_icon(src="")
+  .bookBank#list
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/guangda.png")
       .bank_name 光大银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/huaxia.png", alt="")
       .bank_name 华夏银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/pufa.png", alt="")
       .bank_name 浦发银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/zhaoshang.png", alt="")
       .bank_name 招商银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/xingye.png", alt="")
       .bank_name 兴业银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/minsheng.png", alt="")
       .bank_name 民生银行
-      img.bank_selected(src="")
-    .bank_item
-      img.bank_icon(src="", alt="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
+    .bank_item(data-id="1")
+      img.bank_icon(src="../global/image/colorBank/zhongguo.png", alt="")
       .bank_name 中国银行
-      img.bank_selected(src="")
+      img.bank_selected(src="../global/image/selected_yellow.png")
 
   .book_fixed_footer
     .footer_txt 您预约的银行
     a(href="javascript:void(0);").bookBtn 确定
+
+block footer
+  script.
+    $(function(){
+      var selectId = null;
+      $("#list").onClick('click','.bank_item',function() {
+        var self = $(this);
+        selectId = self.attr('data-id');
+        self.addClass('active').siblings().removeClass('active');
+        if(selectId) {
+          $(".book_fixed_footer .bookBtn").addClass('bookBtn_yellow');
+        }
+      });
+      $(".book_fixed_footer").onClick('click','.bookBtn_yellow',function() {
+        console.log('booked');
+      })
+    });

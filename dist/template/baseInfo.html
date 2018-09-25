@@ -23,49 +23,64 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="" alt=""><span>基本资料</span></div>
+    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>基本资料</span></div>
     <div class="baseInfo infoSec">
-      <div class="sec">
+      <div class="sec" data-name="education">
         <div class="sec_title">学历</div>
         <div class="sec_cont">
-          <div class="elem">专科</div>
-          <div class="elem">本科及以上</div>
-          <div class="elem">其他</div>
+          <div class="elem" data-type="01">专科</div>
+          <div class="elem" data-type="02">本科及以上</div>
+          <div class="elem" data-type="other">其他</div>
         </div>
       </div>
-      <div class="sec">
+      <div class="sec" data-name="house">
         <div class="sec_title">住房性质</div>
         <div class="sec_cont">
-          <div class="elem">租房</div>
-          <div class="elem">本地购置住房</div>
-          <div class="elem">集体宿舍</div>
-          <div class="elem">父母、亲属家</div>
-          <div class="elem">其他</div>
+          <div class="elem" data-type="01">租房</div>
+          <div class="elem" data-type="02">本地购置住房</div>
+          <div class="elem" data-type="03">集体宿舍</div>
+          <div class="elem" data-type="04">父母、亲属家</div>
+          <div class="elem" data-type="other">其他</div>
         </div>
       </div>
-      <div class="sec">
+      <div class="sec" data-name="card">
         <div class="sec_title">信用卡信息</div>
         <div class="sec_cont">
-          <div class="elem">无信用卡</div>
-          <div class="elem">有其他信用卡</div>
-          <div class="elem">有本行信用卡</div>
+          <div class="elem" data-type="01">无信用卡</div>
+          <div class="elem" data-type="02">有其他信用卡</div>
+          <div class="elem" data-type="other">有本行信用卡</div>
         </div>
       </div>
-      <div class="sec">
+      <div class="sec" data-name="work">
         <div class="sec_title">工作信息</div>
         <div class="sec_cont">
-          <div class="elem">白领上班族</div>
-          <div class="elem">公务员事业单位</div>
-          <div class="elem">房地产经纪</div>
-          <div class="elem">美容美发</div>
-          <div class="elem">小型餐饮</div>
-          <div class="elem">保安保洁</div>
-          <div class="elem">个体户</div>
-          <div class="elem">企业主</div>
-          <div class="elem">其他</div>
+          <div class="elem" data-type="01">白领上班族</div>
+          <div class="elem" data-type="02">公务员事业单位</div>
+          <div class="elem" data-type="03">房地产经纪</div>
+          <div class="elem" data-type="04">美容美发</div>
+          <div class="elem" data-type="05">小型餐饮</div>
+          <div class="elem" data-type="06">保安保洁</div>
+          <div class="elem" data-type="07">个体户</div>
+          <div class="elem" data-type="08">企业主</div>
+          <div class="elem" data-type="other">其他</div>
         </div>
       </div>
     </div>
     <div class="fixed_footer"><a class="btn btn_bg_green" href="javascript:void(0);">下一步</a></div>
+    <script>
+      $(function() {
+        var sendData = {};
+        $(".sec").onClick('click','.elem',function() {
+          var self = $(this);
+          var selfParent = self.closest('.sec');
+          self.addClass('active').siblings('.elem').removeClass('active');
+          var name = selfParent.attr('data-name');
+          var type = self.attr('data-type');
+          sendData[name] = type;
+          console.log(sendData);
+        });
+      
+      });
+    </script>
   </body>
 </html>

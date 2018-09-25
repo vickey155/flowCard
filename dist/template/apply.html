@@ -23,7 +23,7 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="" alt=""><span>申请信息</span></div>
+    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>申请信息</span></div>
     <div class="applyInfo">
       <div class="sec_top"><img class="bg" src="" alt="">
         <div class="sec_cont"><img class="avater" src="" alt="">
@@ -60,7 +60,7 @@
       </div>
       <div class="sec_agreen">
         <div class="check_wrap">
-          <input type="checkBox" id="agreenCheck"><img class="check_selected" src="" alt="">
+          <input type="checkBox" id="agreenCheck"><img class="check_selected" src="../global/image/selected_rd.png" alt="">
         </div>
         <div class="agreen_name">我已认真阅读并完全同意：<a class="font_yellow" href="">《众银家平台服务协议》</a><br/>的所有条款</div>
       </div>
@@ -72,13 +72,13 @@
           <p>3、在众银家申请信用卡不收取任何费用，凡是索取均为欺诈，请不要相信！</p>
         </div>
       </div>
-      <div class="btn-wrap"><a class="btn btn-bg-yellow" href="javascript:void(0);">提交资料</a></div>
+      <div class="btn-wrap"><a class="btn btn-bg-yellow" href="javascript:void(0);" id="submitBtn">提交资料</a></div>
     </div>
     <script>
-      $(function(){
+      $(function() {
         countTime.init(6);
         $("#agreenCheck").prop('checked',true);
-        $("#agreenCheck").onClick('change',function(){
+        $("#agreenCheck").onClick('change',function() {
           var self = $(this);
           if(self.prop('checked')){
             self.parent().find('.check_selected').show();
@@ -90,7 +90,7 @@
         });
         var phoneReg = /^1[34578]\d{9}$/;
         var cidReg = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
-        $(".btn-bg-yellow").onClick('click',function(){
+        $("#submitBtn").onClick('click',function() {
           var nameVal = $.trim($("#name").val());
           var cidVal = $.trim($("#cid").val());
           var telephoneVal = $.trim($("#telephone").val());

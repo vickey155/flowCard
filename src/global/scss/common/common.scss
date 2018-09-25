@@ -4,7 +4,7 @@ html{
 }
 body{padding:0; color: #000;background: #f6f6f6;width:100%; min-height:100%; margin:0 auto;}
 img{
-  background:#ccc;
+  
 }
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
@@ -59,8 +59,7 @@ $borderRadius:0.1rem;
   height: 0.48rem;
   padding: 0 0.17rem;
   img{
-    width: 0.2rem;
-    height: 0.2rem;
+    max-height: 0.2rem;
   }
   span{
     flex:1;
@@ -75,8 +74,7 @@ $borderRadius:0.1rem;
   height: 0.48rem;
   padding: 0 0.17rem;
   img{
-    width: 0.2rem;
-    height: 0.2rem;
+    max-height: 0.2rem;
   }
   span{
     flex:1;
@@ -113,6 +111,7 @@ $borderRadius:0.1rem;
   align-items: center;
   padding: 0.04rem 0.22rem;
   height: 0.52rem;
+  border-top:0.01rem solid #f2f2f2;
   .col{
     text-align: center;
   }
@@ -122,7 +121,7 @@ $borderRadius:0.1rem;
   }
   .name{
     margin-top: 0.01rem;
-    @include fontFormat($fz: 13px,$fc:#989898,$ta:center);
+    @include fontFormat($fz: 12px,$fc:#989898,$ta:center);
   }
   .btn{
     flex:1;

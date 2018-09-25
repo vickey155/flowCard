@@ -42,10 +42,10 @@
       <div class="btn-wrap"><a class="btn btn-bg-blue" href="javascript:void(0);">登录</a></div>
     </div>
     <script>
-      $(function(){
+      $(function() {
         countTime.init(120);
         var phoneReg = /^1[34578]\d{9}$/;
-        $(".btn-bg-blue ").onClick('click',function(){
+        $(".btn-bg-blue ").onClick('click',function() {
           var account = $.trim($("#account").val());
           var password = $.trim($("#password").val());
           if(account == ''){

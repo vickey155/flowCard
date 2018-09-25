@@ -5,12 +5,11 @@ block headTitle
 
 block content
     - var titleName = '详情';
-    -var headerImgSrc = '12';
     include layout/header_blue.pug
     .detail2-sec
         .sec-card-list
             .sec-row
-                img.img-pic(src="")
+                img.img-pic(src="../global/image/icon_yidong.png")
                 .col
                     .row
                         label 卡号:
@@ -22,12 +21,13 @@ block content
           .title
           .cont
             .row
-              img(src="", alt="").icon-img
+              img(src="../global/image/icon_card.png", alt="").icon-img
               .txt 卡状态
               .status 关机
             .row
-              img(src="", alt="").icon-img
+              img(src="../global/image/icon_time.png", alt="").icon-img
               .txt 剩余天数
+              .status
 
 
         .btn-one

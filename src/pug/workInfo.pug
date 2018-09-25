@@ -7,34 +7,50 @@ block content
   - var titleName = '工作信息';
   include layout/header_white.pug
   .baseInfo.infoSec
-    .sec
+    .sec(data-name="company")
       .sec_title 工作单位性质
       .sec_cont
-        .elem.active 国有
-        .elem 机关事业
-        .elem 外商独资
-        .elem 民营
-        .elem 合资／合作
-        .elem 股份制
-        .elem 个体私营
-        .elem 其他
-    .sec
+        .elem(data-type="01") 国有
+        .elem(data-type="02") 机关事业
+        .elem(data-type="03") 外商独资
+        .elem(data-type="04") 民营
+        .elem(data-type="05") 合资／合作
+        .elem(data-type="06") 股份制
+        .elem(data-type="07") 个体私营
+        .elem(data-type="other") 其他
+    .sec(data-name="socialSecurity")
       .sec_title 社保情况
       .sec_cont
-        .elem 无
-        .elem 连续缴纳3个月
-        .elem 连续缴纳半年
-        .elem 连续缴纳1年
-        .elem 连续缴纳1年以上
-    .sec
+        .elem(data-type="01") 无
+        .elem(data-type="02") 连续缴纳3个月
+        .elem(data-type="03") 连续缴纳半年
+        .elem(data-type="04") 连续缴纳1年
+        .elem(data-type="other") 连续缴纳1年以上
+    .sec(data-name="workProof")
       .sec_title 可提供工作证明
       .sec_cont
-        .elem 工牌
-        .elem 营业执照
-        .elem 工作证明
-        .elem 名片
-        .elem 无工作证明
+        .elem(data-type="01") 工牌
+        .elem(data-type="02") 营业执照
+        .elem(data-type="03") 工作证明
+        .elem(data-type="04") 名片
+        .elem(data-type="other") 无工作证明
 
 
   .fixed_footer
     a(href="javascript:void(0);").btn.btn_bg_green 下一步
+
+block footer 
+  script.
+    $(function() {
+      var sendData = {};
+      $(".sec").onClick('click','.elem',function() {
+        var self = $(this);
+        var selfParent = self.closest('.sec');
+        self.addClass('active').siblings('.elem').removeClass('active');
+        var name = selfParent.attr('data-name');
+        var type = self.attr('data-type');
+        sendData[name] = type;
+        console.log(sendData);
+      });
+  
+    });

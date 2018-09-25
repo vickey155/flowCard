@@ -1,20 +1,34 @@
 extends layout/layout
 
 block headTitle
-  title
+  title 信用卡
+block append headCss
+  link(rel="stylesheet" href="../global/scss/swiper.min.css")
+  script( type="text/javascript" src="../global/js/swiper.min.js")
 
 block content
   - var titleName = '信用卡';
   include layout/header_white.pug
   .creditCard
     .banner
-      img(src="", alt="")
+      img(src="../global/image/banner_card.png", alt="")
 
     .swiper_sec
-      .item
-        p.name 办卡送拉杆箱
-        p.state 便捷申卡额度高
-        img(src="", alt="")
+      .swiper-container#swiperCard
+        .swiper-wrapper
+          .swiper-slide.item
+            p.name 办卡送拉杆箱
+            p.state 便捷申卡额度高
+            img(src="../global/image/card_0.png", alt="")
+          .swiper-slide.item 
+            p.name 51信用卡
+            p.state 免年费10万秒批
+            img(src="../global/image/card_1.png", alt="")
+          .swiper-slide.item
+            p.name World奋斗卡
+            p.state 新客得66元返现
+            img(src="../global/image/card_2.png", alt="")
+        .swiper-pagination
 
     .bankList
       .title
@@ -23,70 +37,85 @@ block content
       .list_cont
         a(href="javascript:void(0);").bank_item
           span.red_bg_icon 高额
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/zhongxin.png", alt="").bank_icon
           p.name 中信银行
           p.state 双12必备大额卡
-        a(href="javascript:void(0);").bank_item
+        a(href="javascript:void(0);").bank_item 
           span.red_bg_icon 秒批
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/pingan.png", alt="").bank_icon
           p.name 平安银行
           p.state 周三享5折
         a(href="javascript:void(0);").bank_item
           span.red_bg_icon 易下
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/guangda.png", alt="").bank_icon
           p.name 光大银行
           p.state 周三狠简单
         a(href="javascript:void(0);").bank_item
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/pufa.png", alt="").bank_icon
           p.name 浦发银行
           p.state 网络申请 当天下卡
         a(href="javascript:void(0);").bank_item
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/xingye.png", alt="").bank_icon
           p.name 兴业银行
           p.state 5分钟极速办卡
         a(href="javascript:void(0);").bank_item
           span.red_bg_icon hot
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/minsheng.png", alt="").bank_icon
           p.name 民生银行
           p.state 天天民生日
         a(href="javascript:void(0);").bank_item
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/jiaotong.png", alt="").bank_icon
           p.name 交通银行
           p.state 星期五优惠5%
         a(href="javascript:void(0);").bank_item
           span.red_bg_icon 返现
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/gongshang.png", alt="").bank_icon
           p.name 工商银行
           p.state 新用户返现66元
         a(href="javascript:void(0);").bank_item
-          img(src="", alt="").bank_icon
+          img(src="../global/image/bank/huaxia.png", alt="").bank_icon
           p.name 华夏银行
           p.state 88积分享星巴克
 
     .optsList
       a(href="javascript:void(0);").col
-        img(src="", alt="").opt_icon
+        img(src="../global/image/opt_book.png", alt="").opt_icon
         p.name 预约办卡
       a(href="javascript:void(0);").col
-        img(src="", alt="").opt_icon
+        img(src="../global/image/opt_query.png", alt="").opt_icon
         p.name 进度查询
       a(href="javascript:void(0);").col
-        img(src="", alt="").opt_icon
+        img(src="../global/image/opt_tip.png", alt="").opt_icon
         p.name 办卡攻略
 
 
   .fixed-footer
-    .col
-      img(src="", alt="").foot_icon
+    a(href="javascript:void(0);").col
+      img(src="../global/image/tar_shop.png", alt="").foot_icon
       p.name 附近商户
-    .col
-      img(src="", alt="").foot_icon
+    a(href="javascript:void(0);").col
+      img(src="../global/image/tar_market.png", alt="").foot_icon
       p.name 贷款超市
-    .col
-      img(src="", alt="").foot_icon
+    a(href="javascript:void(0);").col
+      img(src="../global/image/tar_card_active.png", alt="").foot_icon
       p.name 信用卡
-    .col
-      img(src="", alt="").foot_icon
+    a(href="javascript:void(0);").col
+      img(src="../global/image/tar_person.png", alt="").foot_icon
       p.name 我的
 
+block footer
+  script.
+    $(function(){
+      
+    var swiper = new Swiper('#swiperCard', {
+      pagination: {
+         el: '.swiper-pagination',
+      },
+       autoplay:true,
+       loop:true,
+      slidesPerView: 3,
+      spaceBetween: 0
+    });
+    
+    });
 

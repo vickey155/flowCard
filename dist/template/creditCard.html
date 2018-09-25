@@ -10,8 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title></title>
+    <title>信用卡</title>
     <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../global/scss/swiper.min.css">
+    <script type="text/javascript" src="../global/js/swiper.min.js"></script>
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../global/js/global.js"></script>
@@ -23,55 +25,74 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="" alt=""><span>信用卡</span></div>
+    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>信用卡</span></div>
     <div class="creditCard">
-      <div class="banner"><img src="" alt=""></div>
+      <div class="banner"><img src="../global/image/banner_card.png" alt=""></div>
       <div class="swiper_sec">
-        <div class="item">
-          <p class="name">办卡送拉杆箱</p>
-          <p class="state">便捷申卡额度高</p><img src="" alt="">
+        <div class="swiper-container" id="swiperCard">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide item">
+              <p class="name">办卡送拉杆箱</p>
+              <p class="state">便捷申卡额度高</p><img src="../global/image/card_0.png" alt="">
+            </div>
+            <div class="swiper-slide item"> 
+              <p class="name">51信用卡</p>
+              <p class="state">免年费10万秒批</p><img src="../global/image/card_1.png" alt="">
+            </div>
+            <div class="swiper-slide item">
+              <p class="name">World奋斗卡</p>
+              <p class="state">新客得66元返现</p><img src="../global/image/card_2.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="bankList">
         <div class="title"><span class="txt">热门银行</span><a class="a_link" href="javascript:void(0);">全部信用卡</a></div>
-        <div class="list_cont"><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">高额</span><img class="bank_icon" src="" alt="">
+        <div class="list_cont"><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">高额</span><img class="bank_icon" src="../global/image/bank/zhongxin.png" alt="">
             <p class="name">中信银行</p>
-            <p class="state">双12必备大额卡</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">秒批</span><img class="bank_icon" src="" alt="">
+            <p class="state">双12必备大额卡</p></a><a class="bank_item" href="javascript:void(0);"> <span class="red_bg_icon">秒批</span><img class="bank_icon" src="../global/image/bank/pingan.png" alt="">
             <p class="name">平安银行</p>
-            <p class="state">周三享5折</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">易下</span><img class="bank_icon" src="" alt="">
+            <p class="state">周三享5折</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">易下</span><img class="bank_icon" src="../global/image/bank/guangda.png" alt="">
             <p class="name">光大银行</p>
-            <p class="state">周三狠简单</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="" alt="">
+            <p class="state">周三狠简单</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="../global/image/bank/pufa.png" alt="">
             <p class="name">浦发银行</p>
-            <p class="state">网络申请 当天下卡</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="" alt="">
+            <p class="state">网络申请 当天下卡</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="../global/image/bank/xingye.png" alt="">
             <p class="name">兴业银行</p>
-            <p class="state">5分钟极速办卡</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">hot</span><img class="bank_icon" src="" alt="">
+            <p class="state">5分钟极速办卡</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">hot</span><img class="bank_icon" src="../global/image/bank/minsheng.png" alt="">
             <p class="name">民生银行</p>
-            <p class="state">天天民生日</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="" alt="">
+            <p class="state">天天民生日</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="../global/image/bank/jiaotong.png" alt="">
             <p class="name">交通银行</p>
-            <p class="state">星期五优惠5%</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">返现</span><img class="bank_icon" src="" alt="">
+            <p class="state">星期五优惠5%</p></a><a class="bank_item" href="javascript:void(0);"><span class="red_bg_icon">返现</span><img class="bank_icon" src="../global/image/bank/gongshang.png" alt="">
             <p class="name">工商银行</p>
-            <p class="state">新用户返现66元</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="" alt="">
+            <p class="state">新用户返现66元</p></a><a class="bank_item" href="javascript:void(0);"><img class="bank_icon" src="../global/image/bank/huaxia.png" alt="">
             <p class="name">华夏银行</p>
             <p class="state">88积分享星巴克</p></a></div>
       </div>
-      <div class="optsList"><a class="col" href="javascript:void(0);"><img class="opt_icon" src="" alt="">
-          <p class="name">预约办卡</p></a><a class="col" href="javascript:void(0);"><img class="opt_icon" src="" alt="">
-          <p class="name">进度查询</p></a><a class="col" href="javascript:void(0);"><img class="opt_icon" src="" alt="">
+      <div class="optsList"><a class="col" href="javascript:void(0);"><img class="opt_icon" src="../global/image/opt_book.png" alt="">
+          <p class="name">预约办卡</p></a><a class="col" href="javascript:void(0);"><img class="opt_icon" src="../global/image/opt_query.png" alt="">
+          <p class="name">进度查询</p></a><a class="col" href="javascript:void(0);"><img class="opt_icon" src="../global/image/opt_tip.png" alt="">
           <p class="name">办卡攻略</p></a></div>
     </div>
-    <div class="fixed-footer">
-      <div class="col"><img class="foot_icon" src="" alt="">
-        <p class="name">附近商户</p>
-      </div>
-      <div class="col"><img class="foot_icon" src="" alt="">
-        <p class="name">贷款超市</p>
-      </div>
-      <div class="col"><img class="foot_icon" src="" alt="">
-        <p class="name">信用卡</p>
-      </div>
-      <div class="col"><img class="foot_icon" src="" alt="">
-        <p class="name">我的</p>
-      </div>
-    </div>
+    <div class="fixed-footer"><a class="col" href="javascript:void(0);"><img class="foot_icon" src="../global/image/tar_shop.png" alt="">
+        <p class="name">附近商户</p></a><a class="col" href="javascript:void(0);"><img class="foot_icon" src="../global/image/tar_market.png" alt="">
+        <p class="name">贷款超市</p></a><a class="col" href="javascript:void(0);"><img class="foot_icon" src="../global/image/tar_card_active.png" alt="">
+        <p class="name">信用卡</p></a><a class="col" href="javascript:void(0);"><img class="foot_icon" src="../global/image/tar_person.png" alt="">
+        <p class="name">我的</p></a></div>
+    <script>
+      $(function(){
+        
+      var swiper = new Swiper('#swiperCard', {
+        pagination: {
+           el: '.swiper-pagination',
+        },
+         autoplay:true,
+         loop:true,
+        slidesPerView: 3,
+        spaceBetween: 0
+      });
+      
+      });
+    </script>
   </body>
 </html>

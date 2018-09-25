@@ -23,14 +23,27 @@
     </script>
   </head>
   <body>
-    <div class="header-purple"><img src="" alt=""><span>详情</span>
+    <div class="header-purple"><img src="../../global/image/arrow_white.png" alt=""><span>详情</span>
     </div>
     <div class="detail1-sec">
       <div class="form-row">
         <label>流量卡iccid号</label>
-        <input class="input-box" type="text" placeholder="输入iccid号">
+        <input class="input-box" id="cardId" type="text" placeholder="输入iccid号">
       </div>
       <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);">确认添加</a></div>
     </div>
+    <script>
+      $(function(){
+        
+        $(".btn-bg-white-m").onClick('click',function() {
+          var account = $.trim($("#cardId").val());
+          if(account == ''){
+            layer.sure('请填写输入iccid号');
+            return false;
+          }
+          
+        });
+      });
+    </script>
   </body>
 </html>

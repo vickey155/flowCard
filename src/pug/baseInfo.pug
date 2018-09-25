@@ -7,38 +7,54 @@ block content
   - var titleName = '基本资料';
   include layout/header_white.pug
   .baseInfo.infoSec
-    .sec
+    .sec(data-name="education")
       .sec_title 学历
       .sec_cont
-        .elem 专科
-        .elem 本科及以上
-        .elem 其他
-    .sec
+        .elem(data-type="01") 专科
+        .elem(data-type="02") 本科及以上
+        .elem(data-type="other") 其他
+    .sec(data-name="house")
       .sec_title 住房性质
       .sec_cont
-        .elem 租房
-        .elem 本地购置住房
-        .elem 集体宿舍
-        .elem 父母、亲属家
-        .elem 其他
-    .sec
+        .elem(data-type="01") 租房
+        .elem(data-type="02") 本地购置住房
+        .elem(data-type="03") 集体宿舍
+        .elem(data-type="04") 父母、亲属家
+        .elem(data-type="other") 其他
+    .sec(data-name="card")
       .sec_title 信用卡信息
       .sec_cont
-        .elem 无信用卡
-        .elem 有其他信用卡
-        .elem 有本行信用卡
-    .sec
+        .elem(data-type="01") 无信用卡
+        .elem(data-type="02") 有其他信用卡
+        .elem(data-type="other") 有本行信用卡
+    .sec(data-name="work")
       .sec_title 工作信息
       .sec_cont
-        .elem 白领上班族
-        .elem 公务员事业单位
-        .elem 房地产经纪
-        .elem 美容美发
-        .elem 小型餐饮
-        .elem 保安保洁
-        .elem 个体户
-        .elem 企业主
-        .elem 其他
+        .elem(data-type="01") 白领上班族
+        .elem(data-type="02") 公务员事业单位
+        .elem(data-type="03") 房地产经纪
+        .elem(data-type="04") 美容美发
+        .elem(data-type="05") 小型餐饮
+        .elem(data-type="06") 保安保洁
+        .elem(data-type="07") 个体户
+        .elem(data-type="08") 企业主
+        .elem(data-type="other") 其他
 
   .fixed_footer
     a(href="javascript:void(0);").btn.btn_bg_green 下一步
+
+block footer 
+  script.
+    $(function() {
+      var sendData = {};
+      $(".sec").onClick('click','.elem',function() {
+        var self = $(this);
+        var selfParent = self.closest('.sec');
+        self.addClass('active').siblings('.elem').removeClass('active');
+        var name = selfParent.attr('data-name');
+        var type = self.attr('data-type');
+        sendData[name] = type;
+        console.log(sendData);
+      });
+  
+    });

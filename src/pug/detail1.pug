@@ -10,6 +10,20 @@ block content
     .detail1-sec
         .form-row
           label 流量卡iccid号
-          input.input-box(type="text" placeholder="输入iccid号")
+          input.input-box#cardId(type="text" placeholder="输入iccid号")
         .btn-one
             a(href="javascript:void(0);").btn-bg-white-m 确认添加
+
+block footer
+  script.
+    $(function(){
+      
+      $(".btn-bg-white-m").onClick('click',function() {
+        var account = $.trim($("#cardId").val());
+        if(account == ''){
+          layer.sure('请填写输入iccid号');
+          return false;
+        }
+        
+      });
+    });

@@ -7,18 +7,17 @@
       display: flex;
       display: -webkit-flex;
       justify-content: space-between;
+      align-items: center;
       margin-top: 0.12rem;
       .img-pic{
-          height: 0.7rem;
-          width: 0.7rem;
+          max-width: 0.7rem;
       }
       .col{
           padding:0 0.1rem;
           flex:1;
       }
       .arrow-right{
-          width: 0.1rem;
-          height: 0.16rem;
+          max-width: 0.1rem;
       }
   }
   .row{
@@ -215,12 +214,42 @@
   padding-bottom: 0.62rem;
   .banner{
     width: 100%;
+    img{
+        width:100%;
+    }
   }
   .swiper_sec{
     background: #fff;
-    padding: 0.11rem 0.22rem;
+    padding: 0.1rem 0.1rem;
+    .swiper-container{
+        padding: 0 0 0.2rem;
+        .swiper-wrapper{
+            @extend .flex;
+            justify-content: space-between;
+            flex-flow:row nowrap;
+            .swiper-slide{
+                width: 33%;
+            }
+        }
+        .swiper-pagination{
+            bottom:-0.07rem;
+            .swiper-pagination-bullet{
+                width: 0.1rem;
+                height: 0.02rem;
+                background: #999;
+            }
+            .swiper-pagination-bullet-active{
+                width: 0.1rem;
+                height: 0.02rem;
+                background: #979797;
+            }
+        }
+        
+    }
+    
     .item{
-      padding: 0.21rem;
+      padding: 0.05rem 0;
+      text-align: center;
       p{
         text-align: center;
       }
@@ -233,8 +262,10 @@
         color:#989898;
       }
       img{
-        height: 0.5rem;
+        margin-top: 0.06rem;
         width: 0.82rem;
+        height: 0.47rem;
+        border-radius: 0.04rem;
       }
     }
   }
@@ -261,17 +292,20 @@
       padding: 0.05rem 0;
       .bank_item{
         text-align: center;
-        width: 1.2rem;
-        padding: 0.05rem 0.24rem;
+        padding: 0.05rem 0.1rem;
+        width: 33%;
         position: relative;
+        &:nth-child(3n-1){
+            width: 34%;
+        }
         .red_bg_icon{
           position: absolute;
           left: 50%;
           margin-left:0.1rem;
           top:0;
           background: #F34250;
-          padding: 0.02rem 0.04rem 0.02rem 0.06rem;
-          border-radius: 0.04rem;
+          padding: 0.01rem 0.05rem 0.01rem 0.06rem;
+          border-radius: 0.05rem;
           border-bottom-left-radius: 0;
           @include fontFormat($fz: 8px,$fc:#fff);
         }
@@ -317,11 +351,11 @@
 
     }
     .opt_icon{
-      width: 0.44rem;
-      height: 0.44rem;
+      width: 0.42rem;
+      height: 0.42rem;
     }
     .name{
-      margin-top: 0.04rem;
+      margin-top: 0.034rem;
       @include fontFormat($fz: 13px,$ta:center);
     }
   }
@@ -329,6 +363,9 @@
 .queryProgress{
   .banner{
     width: 100%;
+    img{
+        width: 100%;
+    }
   }
   .tips_yellow{
     padding: 0.05rem;
@@ -357,7 +394,7 @@
       height: 0.35rem;
     }
     .bank_name{
-      padding-left: 0.04rem;
+      padding-left: 0.07rem;
       @include fontFormat($fz: 14px,$fc:#686868);
     }
   }
@@ -370,19 +407,25 @@
     align-items: center;
     padding: 0.1rem 0.15rem;
     border-bottom:0.01rem solid #f2f2f2;
+    &.active{
+        .bank_selected{
+            display: block;
+        }
+    }
   }
   .bank_icon{
     height: 0.35rem;
     width: 0.35rem;
   }
   .bank_name{
-    padding-left: 0.04rem;
+    flex:1;
+    padding-left: 0.06rem;
     @include fontFormat($fz: 14px,$fc:#686868);
   }
   .bank_selected{
-    height: 0.32rem;
-    width: 0.32rem;
+    max-width: 0.3rem;
     margin-right: 0.05rem;
+    display: none;
   }
 }
 .book_fixed_footer{
@@ -415,7 +458,7 @@
 }
 .applyInfo{
   .title{
-    padding: 0.1rem 0.15rem;
+    padding: 0.08rem 0.15rem;
     @include fontFormat($fz:15px,$fc:#646464);
   }
   .sec_top{
@@ -546,6 +589,7 @@
 
 .infoSec{
   padding-bottom: 0.52rem;
+  border-top:0.03rem solid #f2f2f2;
   .sec_title{
     @include fontFormat($fz: 16px,$fc:#4E4E4E,$ta:center);
     padding: 0.11rem;
