@@ -13,7 +13,7 @@ block content
           .trange-left-bottom
           .col
             .name ICCID号
-            .no 89860 2B012 15901 53973
+            .no 89860<br/>2B012<br/>159015<br/>39738
           .col
             img(src="../global/image/icon_yidong.png", ).icon-card
           .tips-red 请仔细核对ICCID号，支付后将无法撤回
@@ -35,18 +35,18 @@ block content
 
 block footer
   script.
-    $(function(){     
+    $(function(){
       $("#payBtn").onClick('click',function() {
         $.ajax({
             type: "POST",
             url: "",
             data: {iccid:account},
             success: function (result) {
-              
+
             },
             error: function () {
               layer.sure('系统有误');
-            }    
-          });  
+            }
+          });
         });
     });

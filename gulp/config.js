@@ -16,7 +16,7 @@ var css = 'global/css';
 var template = 'template';
 
 var script = 'global/js';
-var image = 'global/images';
+var image = 'global/image';
 
 var languages = {
 	list:['en'],
