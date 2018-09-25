@@ -34,18 +34,18 @@ block content
             a(href="javascript:void(0);").btn-bg-white-m#rechargeBtn 立即充值
 block footer
   script.
-    $(function(){     
+    $(function(){
       $("#rechargeBtn").onClick('click',function() {
         $.ajax({
             type: "POST",
             url: "",
-            data: {iccid:account},
+            data: {},
             success: function (result) {
-              
+
             },
             error: function () {
               layer.sure('系统有误');
-            }    
-          });  
+            }
+          });
         });
     });

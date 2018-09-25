@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title></title>
+    <title>预约办卡</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
@@ -23,7 +23,9 @@
     </script>
   </head>
   <body>
-    <div class="header-white"><img src="../../global/image/arrow_grey.png" alt=""><span>预约办卡</span></div>
+    <div class="header-white">
+      <div class="back_icon"><img src="../../global/image/arrow_grey.png" alt=""></div><span>预约办卡</span>
+    </div>
     <div class="bookBank" id="list">
       <div class="bank_item" data-id="guangda"><img class="bank_icon" src="../global/image/colorBank/guangda.png">
         <div class="bank_name">光大银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
@@ -69,12 +71,12 @@
               url: "",
               data: sendData,
               success: function (result) {
-                
+      
               },
               error: function () {
                  layer.sure('系统有误');
-              }    
-            });  
+              }
+            });
         });
       
       });

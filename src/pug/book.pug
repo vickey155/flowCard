@@ -1,7 +1,7 @@
 extends layout/layout
 
 block headTitle
-  title
+  title 预约办卡
 
 block content
   - var titleName = '预约办卡';
@@ -60,12 +60,12 @@ block footer
             url: "",
             data: sendData,
             success: function (result) {
-              
+
             },
             error: function () {
                layer.sure('系统有误');
-            }    
-          });  
+            }
+          });
       });
 
     });

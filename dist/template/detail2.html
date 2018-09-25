@@ -23,7 +23,9 @@
     </script>
   </head>
   <body>
-    <div class="header-purple"><img src="../../global/image/arrow_white.png" alt=""><span>详情</span>
+    <div class="header-purple">
+      <div class="back_icon"><img src="../../global/image/arrow_white.png" alt="">
+      </div><span>详情</span>
     </div>
     <div class="detail2-sec">
       <div class="sec-card-list">
@@ -56,19 +58,19 @@
       <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);" id="rechargeBtn">立即充值</a></div>
     </div>
     <script>
-      $(function(){     
+      $(function(){
         $("#rechargeBtn").onClick('click',function() {
           $.ajax({
               type: "POST",
               url: "",
-              data: {iccid:account},
+              data: {},
               success: function (result) {
-                
+      
               },
               error: function () {
                 layer.sure('系统有误');
-              }    
-            });  
+              }
+            });
           });
       });
     </script>

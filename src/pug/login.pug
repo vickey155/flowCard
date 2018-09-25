@@ -6,7 +6,7 @@ block headTitle
 block content
   .login-sec
       .pic-wrap
-          img(src="", alt="")
+          img(src="../global/image/login.jpg", alt="")
       .el-form
           .el-row
               label.el-label 账号
@@ -50,11 +50,11 @@ block footer
             url: "",
             data: sendData,
             success: function (result) {
-              
+
             },
             error: function () {
                layer.sure('系统有误');
             }
-          });    
+          });
       })
     });

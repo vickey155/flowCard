@@ -29,7 +29,7 @@
           margin-bottom: 0;
       }
       label{
-          @include fontFormat($fz: 18px,$fc:$cc3);
+          @include fontFormat($fz: 17px,$fc:$cc3);
           padding-right: 0.04rem;
       }
       .font-grey{
@@ -64,7 +64,7 @@
     .pic-wrap{
         margin: 0 auto;
         width:2.68rem;
-        height:1.46rem;
+        height:1.68rem;
         background: #d8d8d8;
         img{
             height: 100%;
@@ -72,7 +72,7 @@
         }
     }
     .el-form{
-        margin-top: 0.5rem;
+        margin-top: 0.4rem;
     }
     .btn-wrap{
         padding-top: 0.75rem;
@@ -89,6 +89,11 @@
   }
 }
 .detail2-sec{
+  .sec-card-list{
+    .sec-row{
+        align-items: flex-start;
+    }
+  }
   .set-list{
     .title{
       @include fontFormat($fz: 15px,$fc:#8a8a8a);
@@ -130,7 +135,7 @@
     width: 100%;
     background: #fff;
     height: 1.86rem;
-    padding: 0.04rem 0 0;
+    padding: 0.04rem 0 0.1rem;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -152,7 +157,7 @@
     .tips-red{
       position: absolute;
       left: 0;
-      bottom: 0.1rem;
+      bottom: 0.04rem;
       width: 100%;
       @include fontFormat($fz: 10px,$fc:#d34a4a,$ta:center);
 
@@ -244,9 +249,9 @@
                 background: #979797;
             }
         }
-        
+
     }
-    
+
     .item{
       padding: 0.05rem 0;
       text-align: center;
@@ -535,6 +540,7 @@
       width: 0.16rem;
       height: 0.16rem;
       border:0.01rem solid #666;
+      border-radius: 0.04rem;
       position: relative;
       input[type=checkbox]{
         z-index: 2;
@@ -544,6 +550,7 @@
         width: 0.16rem;
         height: 0.16rem;
         opacity: 0.5;
+        background: transparent;
       }
       img.check_selected{
         z-index: 1;
@@ -552,6 +559,7 @@
         top:-.01rem;
         width: 0.16rem;
         height: 0.16rem;
+        background: transparent;
       }
     }
     .agreen_name{

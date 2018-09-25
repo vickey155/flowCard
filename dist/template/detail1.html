@@ -23,19 +23,22 @@
     </script>
   </head>
   <body>
-    <div class="header-purple"><img src="../../global/image/arrow_white.png" alt=""><span>详情</span>
+    <div class="header-purple">
+      <div class="back_icon"><img src="../../global/image/arrow_white.png" alt="">
+      </div><span>详情</span>
     </div>
     <div class="detail1-sec">
       <div class="form-row">
         <label>流量卡iccid号</label>
         <input class="input-box" id="cardId" type="text" placeholder="输入iccid号">
       </div>
-      <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);">确认添加</a></div>
+      <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);" id="addBtn">确认添加</a></div>
     </div>
     <script>
       $(function(){
-        
-        $(".btn-bg-white-m").onClick('click',function() {
+      
+        $("#addBtn").onClick('click',function() {
+          console.log(88)
           var account = $.trim($("#cardId").val());
           if(account == ''){
             layer.sure('请填写输入iccid号');
@@ -46,12 +49,12 @@
               url: "",
               data: {iccid:account},
               success: function (result) {
-                
+      
               },
               error: function () {
                 layer.sure('系统有误');
-              }    
-            });  
+              }
+            });
           });
       });
     </script>

@@ -11,6 +11,10 @@ $(function () {
       return _on.apply(this, arguments);
     };
   }
+
+  $(".header-purple,.header-white").onClick('click', 'img', function () {
+    window.history.go(-1);
+  });
 });
 
 var layer = function () {

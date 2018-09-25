@@ -4,7 +4,7 @@ html{
 }
 body{padding:0; color: #000;background: #f6f6f6;width:100%; min-height:100%; margin:0 auto;}
 img{
-  
+
 }
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
@@ -52,34 +52,36 @@ $borderRadius:0.1rem;
 }
 
 //导航
-.header-purple{
+.header{
   background: #8484F5;
   display: flex;
   align-items: center;
   height: 0.48rem;
-  padding: 0 0.17rem;
+  padding: 0 0.02rem;
+  .back_icon{
+    padding: 0.1rem 0.18rem;
+  }
   img{
     max-height: 0.2rem;
   }
   span{
     flex:1;
+    padding-right: 0.5rem;
     @include fontFormat($fz: 17px,$fc:#fff,$ta:center);
 
   }
 }
+.header-purple{
+  @extend .header;
+}
 .header-white{
-  background: #f6f6f6;
-  display: flex;
-  align-items: center;
-  height: 0.48rem;
-  padding: 0 0.17rem;
-  img{
-    max-height: 0.2rem;
-  }
+  @extend .header;
+  background: #f2f2f2;
   span{
-    flex:1;
-    @include fontFormat($fz: 17px,$fc:#3f3f3f,$ta:center);
+    @include fontFormat($fz: 17px,$fc:#000,$ta:center);
   }
+
+
 }
 
 //省略号
@@ -354,5 +356,14 @@ a.arrow-r-white{
         border:0;
       }
     }
+  }
+}
+
+.link_wrap{
+  a{
+    width: 100%;
+    font-size: 15px;
+    color:#666;
+    padding:0.1rem 0.2rem;
   }
 }

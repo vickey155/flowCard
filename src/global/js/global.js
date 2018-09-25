@@ -9,6 +9,9 @@ $(function () {
     };
   }
 
+  $(".header-purple,.header-white").onClick('click','img',function () {
+    window.history.go(-1);
+  });
 });
 
 var layer = (function () {

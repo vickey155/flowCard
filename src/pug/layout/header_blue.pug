@@ -1,6 +1,7 @@
 .header-purple
-  if headerImg == 'person'
-    img(src='../../global/image/arrow_person.png', alt="")
-  else
-    img(src='../../global/image/arrow_white.png', alt="")
+  .back_icon
+    if headerImg == 'person'
+      img(src='../../global/image/arrow_person.png', alt="")
+    else
+      img(src='../../global/image/arrow_white.png', alt="")
   span !{titleName}
