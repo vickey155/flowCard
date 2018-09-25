@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="btn-wrap"><a class="btn btn-bg-blue" href="javascript:void(0);">登录</a></div>
+      <div class="btn-wrap"><a class="btn btn-bg-blue" href="javascript:void(0);" id="loginBtn">登录</a></div>
     </div>
     <script>
       $(function() {
@@ -61,6 +61,20 @@
             return false;
           }
         });
+      
+        $("#loginBtn").onClick(function() {
+          $.ajax({
+              type: "POST",
+              url: "",
+              data: sendData,
+              success: function (result) {
+                
+              },
+              error: function () {
+                 layer.sure('系统有误');
+              }
+            });    
+        })
       });
     </script>
   </body>

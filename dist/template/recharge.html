@@ -50,7 +50,24 @@
           </div>
         </div>
       </div>
-      <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);">立即支付</a></div>
+      <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);" id="payBtn">立即支付</a></div>
     </div>
+    <script>
+      $(function(){     
+        $("#payBtn").onClick('click',function() {
+          $.ajax({
+              type: "POST",
+              url: "",
+              data: {iccid:account},
+              success: function (result) {
+                
+              },
+              error: function () {
+                layer.sure('系统有误');
+              }    
+            });  
+          });
+      });
+    </script>
   </body>
 </html>

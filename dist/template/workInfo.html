@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="fixed_footer"><a class="btn btn_bg_green" href="javascript:void(0);">下一步</a></div>
+    <div class="fixed_footer"><a class="btn btn_bg_green" href="javascript:void(0);" id="nextBtn">下一步</a></div>
     <script>
       $(function() {
         var sendData = {};
@@ -73,6 +73,20 @@
           console.log(sendData);
         });
       
+        $("#nextBtn").onClick(function() {
+          $.ajax({
+              type: "POST",
+              url: "",
+              data: sendData,
+              success: function (result) {
+                
+              },
+              error: function () {
+                 layer.sure('系统有误');
+              }
+            });
+            
+        })
       });
     </script>
   </body>
