@@ -37,7 +37,7 @@ block content
 
 
   .fixed_footer
-    a(href="javascript:void(0);").btn.btn_bg_green 下一步
+    a(href="javascript:void(0);").btn.btn_bg_green#nextBtn 下一步
 
 block footer 
   script.
@@ -53,4 +53,18 @@ block footer
         console.log(sendData);
       });
   
+      $("#nextBtn").onClick(function() {
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: sendData,
+            success: function (result) {
+              
+            },
+            error: function () {
+               layer.sure('系统有误');
+            }
+          });
+          
+      })
     });

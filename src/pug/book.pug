@@ -7,31 +7,31 @@ block content
   - var titleName = '预约办卡';
   include layout/header_white.pug
   .bookBank#list
-    .bank_item(data-id="1")
+    .bank_item(data-id="guangda")
       img.bank_icon(src="../global/image/colorBank/guangda.png")
       .bank_name 光大银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="huaxia")
       img.bank_icon(src="../global/image/colorBank/huaxia.png", alt="")
       .bank_name 华夏银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="pufa")
       img.bank_icon(src="../global/image/colorBank/pufa.png", alt="")
       .bank_name 浦发银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="zhaoshang")
       img.bank_icon(src="../global/image/colorBank/zhaoshang.png", alt="")
       .bank_name 招商银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="xingye")
       img.bank_icon(src="../global/image/colorBank/xingye.png", alt="")
       .bank_name 兴业银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="minsheng")
       img.bank_icon(src="../global/image/colorBank/minsheng.png", alt="")
       .bank_name 民生银行
       img.bank_selected(src="../global/image/selected_yellow.png")
-    .bank_item(data-id="1")
+    .bank_item(data-id="zhongguo")
       img.bank_icon(src="../global/image/colorBank/zhongguo.png", alt="")
       .bank_name 中国银行
       img.bank_selected(src="../global/image/selected_yellow.png")
@@ -43,16 +43,29 @@ block content
 block footer
   script.
     $(function(){
-      var selectId = null;
+      var sendData = {};
       $("#list").onClick('click','.bank_item',function() {
         var self = $(this);
-        selectId = self.attr('data-id');
+        var selectId = self.attr('data-id');
         self.addClass('active').siblings().removeClass('active');
         if(selectId) {
           $(".book_fixed_footer .bookBtn").addClass('bookBtn_yellow');
+          sendData.bank = selectId;
         }
       });
       $(".book_fixed_footer").onClick('click','.bookBtn_yellow',function() {
-        console.log('booked');
-      })
+        console.log(sendData);
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: sendData,
+            success: function (result) {
+              
+            },
+            error: function () {
+               layer.sure('系统有误');
+            }    
+          });  
+      });
+
     });

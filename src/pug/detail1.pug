@@ -24,6 +24,16 @@ block footer
           layer.sure('请填写输入iccid号');
           return false;
         }
-        
-      });
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {iccid:account},
+            success: function (result) {
+              
+            },
+            error: function () {
+              layer.sure('系统有误');
+            }    
+          });  
+        });
     });

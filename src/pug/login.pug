@@ -20,7 +20,7 @@ block content
                   a(href="javascript:void(0)" style="display:none;").code-btn#codeTimeBtn <i>120</i>秒
 
       .btn-wrap
-          a(href="javascript:void(0);").btn.btn-bg-blue 登录
+          a(href="javascript:void(0);").btn.btn-bg-blue#loginBtn 登录
 
 block footer
   script.
@@ -43,4 +43,18 @@ block footer
           return false;
         }
       });
+
+      $("#loginBtn").onClick(function() {
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: sendData,
+            success: function (result) {
+              
+            },
+            error: function () {
+               layer.sure('系统有误');
+            }
+          });    
+      })
     });

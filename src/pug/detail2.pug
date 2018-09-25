@@ -31,4 +31,21 @@ block content
 
 
         .btn-one
-            a(href="javascript:void(0);").btn-bg-white-m 立即充值
+            a(href="javascript:void(0);").btn-bg-white-m#rechargeBtn 立即充值
+block footer
+  script.
+    $(function(){     
+      $("#rechargeBtn").onClick('click',function() {
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {iccid:account},
+            success: function (result) {
+              
+            },
+            error: function () {
+              layer.sure('系统有误');
+            }    
+          });  
+        });
+    });

@@ -31,4 +31,22 @@ block content
 
 
       .btn-one
-          a(href="javascript:void(0);").btn-bg-white-m 立即支付
+          a(href="javascript:void(0);").btn-bg-white-m#payBtn 立即支付
+
+block footer
+  script.
+    $(function(){     
+      $("#payBtn").onClick('click',function() {
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: {iccid:account},
+            success: function (result) {
+              
+            },
+            error: function () {
+              layer.sure('系统有误');
+            }    
+          });  
+        });
+    });
