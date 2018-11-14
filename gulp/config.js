@@ -26,10 +26,10 @@ var languages = {
 module.exports.browserSync = {
 	dev:{
 		server:{
-			baseDir: [src,dist],
-			index:"template/index.html"
+			baseDir: dist,
+			index:"/template/index.html"
 		},
-    debugInfo: false,
+   		debugInfo: false,
 		host: 'localhost',
 		port:'8898',
 		notify:false
