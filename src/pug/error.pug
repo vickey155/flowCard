@@ -1,0 +1,18 @@
+extends layout/layout
+
+block headTitle
+  title 详情
+
+block content
+    - var titleName = '错误页面';
+    include layout/header_blue.pug
+    .error-sec
+        .img-wrap
+          //- img(src="../global/image/error.png", alt="")
+          img(src="../global/image/ok.png", alt="")
+        .error-tips 页面错误
+        .btn-one
+            a(href="/template/index.html").btn-bg-white-m 返回首页
+
+block footer
+  
