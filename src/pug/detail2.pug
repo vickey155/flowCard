@@ -1,37 +1,38 @@
 extends layout/layout
 
 block headTitle
-  title 详情
+  title 查询
 
 block content
-    - var titleName = '详情';
-    include layout/header_blue.pug
     .detail2-sec
         .sec-card-list
-            .sec-row
+            a.sec-row
                 img.img-pic(src="../global/image/icon_yidong.png")
                 .col
+                    .card-num 卡号：89860 2B012 15901 53973
+                    .no-num 号码：10648 0904 7350
                     .row
-                        label 卡号:
-                        div.font-blue 89860 2B411 16C00 78152
-                    .row
-                        label 号码:
-                        div.font-grey 10640 0904 7350
+                        span.icon.icon-orange 关机
+                        span.icon.icon-blue 正常
         .set-list
-          .title
+          .title 套餐信息
           .cont
             .row
-              img(src="../global/image/icon_card.png", alt="").icon-img
-              .txt 卡状态
+              .txt 卡的状态
               .status 关机
             .row
-              img(src="../global/image/icon_time.png", alt="").icon-img
               .txt 剩余天数
+              .status
+            .row
+              .txt 剩余流量
+              .status
+            .row
+              .txt 套餐余额
               .status
 
 
         .btn-one
-            a(href="javascript:void(0);").btn-bg-white-m#rechargeBtn 立即充值
+            a(href="javascript:void(0);").btn-bg-blue#rechargeBtn 立即充值
 block footer
   script.
     $(function(){

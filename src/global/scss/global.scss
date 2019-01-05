@@ -1,91 +1,102 @@
-@import "./common/common.scss";
+@import "./common/common.scss"; 
+
 .sec-card-list{
   $cc3:#c3c3c3;
+  margin-top: 0.16rem;
   .sec-row{
       background: #fff;
-      padding: 0.11rem 0.15rem;
+      padding: 0.3rem 0.35rem;
       display: flex;
       display: -webkit-flex;
       justify-content: space-between;
-      align-items: center;
-      margin-top: 0.12rem;
+      align-items: center;  
+      border-bottom:0.01rem solid #dedede;
+      &:last-child{
+        border: 0;
+      }
       .img-pic{
-          max-width: 0.7rem;
+          width: 1.44rem;
+          height: 1.44rem;
       }
       .col{
-          padding:0 0.1rem;
           flex:1;
+          padding: 0 0.2rem 0 0.4rem;
       }
       .arrow-right{
-          max-width: 0.1rem;
+          max-width: 0.16rem;
       }
+  }
+  .card-num{
+    @include fontFormat($fz: 15px,$fc:$cc3);
+    line-height: 0.4rem;
+    margin-bottom: 0.1rem;
+  }
+  .no-num{
+    @include fontFormat($fz: 15px,$fc:$c6);
+    line-height: 0.4rem;
   }
   .row{
       display: flex;
       display: -webkit-flex;
       align-items: center;
-      margin-bottom: 0.04rem;
-      &:last-child{
-          margin-bottom: 0;
-      }
-      label{
-          @include fontFormat($fz: 17px,$fc:$cc3);
-          padding-right: 0.04rem;
-      }
-      .font-grey{
-          @include fontFormat($fz: 16px,$fc:#989898);
-      }
-      .font-blue{
-          @include fontFormat($fz: 16px,$fc:#519aec);
-      }
+      margin-top: 0.2rem;
       .icon{
           @include fontSize($fz: 12px);
           text-align: center;
-          padding: 0.02rem 0.03rem;
+          padding: 0 0.2rem;
+          line-height: 0.4rem;
           border-width: 0.01rem;
           border-style: solid;
-          border-radius: 0.04rem;
-          margin-right: 0.1rem;
+          border-radius: 0.52rem;
+          margin-right: 0.48rem;
       }
-      .icon-green{
-          color:#6ec84c;
-          border-collapse: #6ec84c;
+      .icon-orange{
+          color:#ff9a26;
+          border-collapse: #ff9a26;
       }
       .icon-blue{
-          color:#007dff;
-          border-collapse: #007dff;
+          color:#108ee9;
+          border-collapse: #108ee9;
       }
   }
 }
 .login-sec{
     height: 100%;
-    background: #fff;
-    padding: 0.4rem 0.22rem;
+    background: #fff; 
+    padding: 1rem 1rem 0;
     .pic-wrap{
         margin: 0 auto;
-        width:2.68rem;
-        height:1.68rem;
-        background: #d8d8d8;
+        width:1.4rem;
+        height:2rem;
+        background: #108ee9;
         img{
             height: 100%;
             width: 100%;
         }
     }
     .el-form{
-        margin-top: 0.4rem;
+        margin-top:1.5rem;
     }
     .btn-wrap{
-        padding-top: 0.75rem;
+        padding-top: 1rem;
     }
 }
 .my-sec{
-    .btn-wrap{
-        padding: 0.3rem 0.5rem;
+  .btn-one {
+    padding: 1.4rem 0.5rem 0;
+    .btn-bg-blue-rect{
+      width: 100%;
+      margin-bottom: 0.4rem;
     }
+  }
 }
 .detail1-sec{
+  padding-top: 0.2rem;
   .btn-one{
-    padding-top: 0.47rem;
+    padding: 0.7rem 1rem 0;
+    .btn-bg-blue{
+      width: 100%;
+    }
   }
 }
 .detail2-sec{
@@ -96,17 +107,18 @@
   }
   .set-list{
     .title{
-      @include fontFormat($fz: 15px,$fc:#8a8a8a);
-      padding: 0.1rem 0.15rem;
+      @include fontFormat($fz: 14px,$fc:$c6);
+      padding: 0.2rem 0.36rem;
+      line-height: 0.36rem
     }
     .row{
       display: flex;
       display: -webkit-flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.1rem 0.15rem;
+      padding: 0.3rem 0.36rem;
       background: #fff;
-      border-bottom:0.01rem solid #f2f2f2;
+      border-bottom:0.01rem solid #dedede;
       &:last-child{
         border-bottom: 0;
       }
@@ -116,31 +128,40 @@
       width:0.28rem;
     }
     .txt{
-      @include fontFormat($fz: 14px);
-      padding: 0 0.08rem;
+      @include fontFormat($fz: 15px,$fc:$c3);
+      line-height: 0.4rem;
       flex:1;
     }
     .status{
-      @include fontFormat($fz: 11px,$fc:#8a8a8a);
+      line-height: 0.4rem;
+      @include fontFormat($fz: 15px,$fc:#999999);
+    }
+    
+  }
+  .btn-one{
+    padding: 0.7rem 1rem 0;
+    .btn-bg-blue{
+      width: 100%;
     }
   }
 }
 
 .recharge-sec{
   .sec-cont{
-    padding: 0.15rem 0.15rem 0.83rem;
+    padding: 0.12rem 0.48rem;
     background: #fff;
+    margin-bottom: 0.1rem;
+    overflow: hidden; 
   }
   .card{
     width: 100%;
     background: #fff;
-    height: 1.88rem;
-    padding: 0.04rem 0 0;
+    padding: 0.16rem 0 0.48rem;
     position: relative;
     display: flex;
     justify-content: space-between;
-    border:0.025rem solid #EE823B;
-    border-radius: 0.06rem;
+    border:0.04rem solid #ff843a;
+    border-radius: 0.1rem;
     .trange-left-bottom{
       $pos:0.64rem;
       width:$pos;
@@ -152,154 +173,192 @@
       overflow: hidden;
       background: #fff;
       -webkit-transform:translate(-0.25rem,.16rem) rotate(45deg);
-      border-top:0.025rem solid #EE823B;
+      border-top:0.04rem solid #ff843a;
     }
     .tips-red{
       position: absolute;
       left: 0;
-      bottom: 0.04rem;
+      bottom: 0.08rem;
       width: 100%;
-      @include fontFormat($fz: 10px,$fc:#d34a4a,$ta:center);
+      @include fontFormat($fz: 12px,$fc:#ff2323,$ta:center);
 
     }
     .col{
       flex:1;
       text-align: center;
       padding: 0;
+      border-right:0.04rem dashed #ff843a;
+    }
+    .col-r{
+      border: 0;
+      @extend .flex;
+      justify-content: center;
+      align-items: center;
     }
     .name{
+      margin-top: -0.04rem;
       @include fontFormat($fz: 12px,$fc:#686868,$ta:center);
     }
     .no{
-      @include fontFormat($fz: 28px,$fc:#519AEC,$ta:center);
-      border-right:0.025rem solid #EE823B;
-      padding: 0.02rem 0.3rem;
-      font-weight: 400;
-      width: 1.7rem;
+      @include fontFormat($fz: 26px,$fc:#1aa0e3,$ta:center);  
+      padding: 0.06rem 0.3rem;
+      font-weight: 600;
       word-break: break-all;
     }
     .icon-card{
-      width: 1.06rem;
-      height: 1.09rem;
-      margin-top: 0.24rem;
+      width: 1.96rem;
+      height: 1.96rem;
     }
   }
-  .list{
-    padding: 0.28rem 0 0;
+  .tabs-list{
+    padding: 0.3rem 0.5rem;
     background: #fff;
-    width: 100%;
-    .flex{
-      display: flex;
-      display: -webkit-flex;
-      align-items: center;
+    overflow: hidden; 
+    .tab-one{
+      border:0.02rem solid #108ee9;
+      border-radius: 0.16rem;
+      padding: 0.15rem 0;
+      margin-bottom: 0.3rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
-    .row{
-      border-bottom:0.01rem solid #f2f2f2;
-      padding: 0 0.01rem;
-      label{
-        line-height: 0.4rem;
-        @include fontFormat($fz: 14px,$fc:#686868);
+    .price{
+      @include fontFormat($fz: 18px,$fc:#108ee9,$ta:center);  
+      font-weight: 400;
+    }
+    .time{
+      @include fontFormat($fz: 13px,$fc:#108ee9,$ta:center);  
+    }
+    .tab-one.active{
+      background: #108ee9;
+      .price{
+        color:#fff;
       }
-      .txt{
-        line-height: 0.4rem;
-        @include fontFormat($fz: 12px,$fc:#EE823B);
-        flex:1;
+      .time{
+        color:#fff;
       }
-      .row-tips{
-        @include fontFormat($fz: 11px,$fc:#989898);
-        padding: 0rem 0 0.13rem;
-
+    }
+  }
+     
+  .sec-money {
+    background: #fff;
+    padding: 0.3rem 0.5rem;
+    text-align: right;
+    margin-top: 0.16rem;
+    span{
+      @include fontFormat($fz: 15px,$fc:$c3);  
+      &.font-orange{
+        @include fontFormat($fz: 18px,$fc:#ff9a26);  
       }
     }
   }
   .btn-one{
-    padding-top: 0.45rem;
+    padding: 0.4rem 0.5rem 0;
   }
 }
 
 .creditCard{
-  padding-bottom: 0.62rem;
+  padding-bottom: 1.2rem;
   .banner{
     width: 100%;
+    margin-bottom: 0.15rem;
     img{
         width:100%;
     }
   }
-  .swiper_sec{
+  #swiperBanner{
+    .swiper-pagination{
+      bottom:0;
+      .swiper-pagination-bullet{
+        background: #f9a397;
+        opacity: 1;
+        &.swiper-pagination-bullet-active{
+          background: #fff;
+        }
+      }
+    }
+  }
+  .card-img-sec{
+    padding: 0.25rem 0.19rem;
     background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    #swiperCard{
+      img{
+        width: 100%;
+      }
+      .swiper-pagination{
+        bottom:0;
+        .swiper-pagination-bullet{
+          width: 0.3rem;
+          height: 0.08rem;
+          background: #fff;
+          border-radius: 0;
+          transform: skewX(-45deg);
+          opacity: 1;
+          &.swiper-pagination-bullet-active{
+            background: #4768f3;
+          }
+        }
+      }
+    }
+  }
+  .swiper_sec{
     padding: 0.1rem 0.1rem;
     .swiper-container{
-        padding: 0 0 0.2rem;
-        .swiper-wrapper{
-            @extend .flex;
-            justify-content: space-between;
-            flex-flow:row nowrap;
-            .swiper-slide{
-                width: 33%;
-            }
-        }
-        .swiper-pagination{
-            bottom:-0.07rem;
-            .swiper-pagination-bullet{
-                width: 0.1rem;
-                height: 0.02rem;
-                background: #999;
-            }
-            .swiper-pagination-bullet-active{
-                width: 0.1rem;
-                height: 0.02rem;
-                background: #979797;
-            }
-        }
-
+        padding: 0.15rem 0.3rem 0.1rem 0;
     }
-
     .item{
-      padding: 0.05rem 0;
+      width: 2.4rem;
+      box-sizing: border-box;
+      padding: 0.24rem 0.16rem;
       text-align: center;
+      margin-left:0.3rem;
+      border-radius: 0.04rem;
+      background: #fff;
+      box-shadow: 0 0 0.08rem 0.04rem rgba(10,13,47,0.06);
       p{
         text-align: center;
       }
       .name{
-        @include fontSize($fz:14px);
-        color:#676767;
+        @include fontFormat($fz:12px,$fc:$c3,$ta:center);
       }
       .state{
-        @include fontSize($fz:11px);
-        color:#989898;
+        @include fontFormat($fz:10px,$fc:#999999,$ta:center);
       }
       img{
-        margin-top: 0.06rem;
-        width: 0.82rem;
-        height: 0.47rem;
+        margin-top: 0.1rem;
+        width: 100%;
         border-radius: 0.04rem;
       }
     }
   }
   .bankList{
-    margin-top: 0.1rem;
+    margin-top: 0.12rem;
     background: #fff;
+    padding: 0 0.15rem;
     .title{
-      padding: 0.07rem 0.2rem;
+      padding: 0.3rem 0 0.2rem 0.3rem;
       @extend .flex;
       justify-content: space-between;
       align-items: center;
-      border: 0.01rem solid #f2f2f2;
+      border-bottom: 0.01rem solid #dedede;
       .txt{
-        @include fontFormat($fz: 14px,$fc:#676767);
+        @include fontFormat($fz: 16px,$fc:#3c3c3c);
       }
       .a_link{
-        @include fontFormat($fz: 11px,$fc:#c3c3c3);
+        @include fontFormat($fz: 13px,$fc:#999999);
       }
     }
     .list_cont{
       @extend .flex;
       justify-content: space-between;
       flex-flow: row wrap;
-      padding: 0.05rem 0;
+      padding: 0.3rem 0 0;
       .bank_item{
         text-align: center;
-        padding: 0.05rem 0.1rem;
+        padding: 0.1rem 0 0.3rem;
         width: 33%;
         position: relative;
         &:nth-child(3n-1){
@@ -317,16 +376,17 @@
           @include fontFormat($fz: 8px,$fc:#fff);
         }
         .bank_icon{
-          height: 0.44rem;
-          width:0.44rem;
+          height: 1.14rem;
+          width:1.14rem;
         }
         .name{
-          @include fontFormat($fz: 13px,$ta:center);
+          margin-top: 0.03rem;
+          @include fontFormat($fz: 13px,$fc:$c3,$ta:center);
         }
         .state{
           margin-top: 0.02rem;
           @extend .ellipsis;
-          @include fontFormat($fz: 10px,$fc:#c3c3c3,$ta:center);
+          @include fontFormat($fz: 10px,$fc:#999999,$ta:center);
         }
       }
     }
@@ -335,35 +395,26 @@
     @extend .flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.1rem 0.34rem;
+    // padding: 0.22rem 0.34rem;
     background: #fff;
     margin-top: 0.1rem;
     .col{
       text-align: center;
       position: relative;
-      &::after{
-        content: "";
-        position: absolute;
-        left: 0.9rem;
-        top:0.02rem;
-        height: 0.41rem;
-        width: 0.01rem;
-        border-right:0.01rem solid #f2f2f2;
-      }
+      padding: 0.22rem 0;
+      flex: 1;
+      border-right:0.01rem solid #f4f4f4;
       &:last-child{
-        &::after{
-          border:0;
-        }
+        border:0
       }
-
     }
     .opt_icon{
-      width: 0.42rem;
-      height: 0.42rem;
+      width: 0.8rem;
+      height: 0.8rem;
     }
     .name{
-      margin-top: 0.034rem;
-      @include fontFormat($fz: 13px,$ta:center);
+      margin-top: 0.04rem;
+      @include fontFormat($fz: 14px,$ta:center);
     }
   }
 }
@@ -407,13 +458,14 @@
   }
 }
 .bookBank{
-  background:#fff;
+  padding-bottom: 1rem;
   .bank_item{
+    background:#fff;
     @extend .flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.1rem 0.15rem;
-    border-bottom:0.01rem solid #f2f2f2;
+    padding: 0.3rem 0.32rem;
+    border-bottom:0.01rem solid #dedede;
     &.active{
         .bank_selected{
             display: block;
@@ -421,13 +473,13 @@
     }
   }
   .bank_icon{
-    height: 0.35rem;
-    width: 0.35rem;
+    height: 0.72rem;
+    width: 0.72rem;
   }
   .bank_name{
     flex:1;
-    padding-left: 0.06rem;
-    @include fontFormat($fz: 14px,$fc:#686868);
+    padding-left: 0.3rem;
+    @include fontFormat($fz: 17px,$fc:$c3);
   }
   .bank_selected{
     max-width: 0.3rem;
@@ -445,22 +497,33 @@
   @extend .flex;
   justify-content: space-between;
   align-items: center;
-  height: 0.52rem;
+  height: 1rem;
   .footer_txt {
-    line-height: 0.52rem;
-    padding-left:0.15rem ;
-    @include fontFormat($fz: 18px,$fc:#686868);
+    line-height: 1rem;  
+    @include fontFormat($fz: 16px,$fc:$c3);
     flex:1;
+    padding-left:0.3rem;
+    border-top:0.01rem solid #dedede;
   }
   .bookBtn{
-    width: 1rem;
+    width: 2.8rem;
     height: 100%;
-    background: #E7E7E7;
-    line-height: 0.52rem;
-    @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+    background: #87c6f4; 
+    text-align: center;
+    font-size: 0;
+    span{
+      line-height: 1rem;
+      @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+    }
+    .num{
+      display: none;
+    }
   }
-  .bookBtn_yellow{
-    background: #FED500;
+  .bookBtn_active{
+    background: #108ee9;
+    span.num{
+      display: inline-block;
+    }
   }
 }
 .applyInfo{
@@ -598,49 +661,73 @@
 }
 
 .infoSec{
-  padding-bottom: 0.52rem;
   border-top:0.03rem solid #f2f2f2;
+  height: 100%;
+  background:#fff;
+  padding-top: 0.22rem;
+  .sec{
+    padding:0.1rem 0.32rem 0;
+  }
   .sec_title{
-    @include fontFormat($fz: 16px,$fc:#4E4E4E,$ta:center);
-    padding: 0.11rem;
+    @include fontFormat($fz: 16px,$fc:#262626);
+    padding-left: 0.04rem;
   }
   .sec_cont{
     @extend .flex;
     flex-flow: row wrap;
-    border-top:0.01rem solid #f2f2f2;
-    border-left:0.01rem solid #f2f2f2;
+    padding-top: 0.2rem;
     .elem{
       background: #fff;
-      width: 33%;
-      padding: 0.08rem;
-      @include fontFormat($fz: 14px,$fc:#4E4E4E,$ta:center);
-      border-bottom: 0.01rem solid #f2f2f2;
-      border-right: 0.01rem solid #f2f2f2;
-      &:nth-child(3n+0){
-        width: 34%;
-        border-right:0;
+      width: 2.04rem;
+      overflow: hidden;
+      @include fontFormat($fz: 13px,$fc:#999999,$ta:center);
+      margin-right: 0.36rem;
+      background: #f5f5f5;
+      border-radius: 0.28rem;
+      margin-bottom: 0.3rem;
+      line-height: 0.6rem;
+      &:nth-child(3n){
+        margin-right: 0;
       }
       &.active{
-        @include fontFormat($fz: 14px,$fc:#01CC35,$ta:center);
-        font-weight: bold;
+        background: #108ee9;
+        color:#fff;
+      }
+      &.elem-l{
+        width: 2.2rem;
       }
     }
+  }
+  .btn-one{
+    padding:0.6rem 1rem 0;
   }
 }
 
 .error-sec{
+  height: 100%;
+  background: #fff;
   .img-wrap{
     width: 100%;
     text-align: center;
-    padding: 0.5rem 0 0;
+    padding: 1.2rem 0 0;
     img{
       vertical-align: top;
-      width: 1rem;
-      height: 1rem;
+      width: 1.45rem;
+      height: 1.45rem;
     }
   }
   .error-tips{
-    padding: 0.4rem 0 0;
-    @include fontFormat($fz: 16px,$fc:#4E4E4E,$ta:center);
+    height:1.8rem ;
+    padding: 0.6rem 0 0;
+    p{
+      @include fontFormat($fz: 18px,$fc:$c3,$ta:center);
+    }
+    p.font-s{
+      @include fontFormat($fz: 12px,$fc:#999999,$ta:center);
+    }
+    
+  }
+  .btn-one{
+    padding: 0.7rem 1rem 0;
   }
 }

@@ -1,17 +1,15 @@
 extends layout/layout
 
 block headTitle
-  title 详情
+  title 手工输入流量卡号
 
 block content
-    - var titleName = '详情';
-    include layout/header_blue.pug
     .detail1-sec
         .form-row
-          label 流量卡iccid号
-          input.input-box#cardId(type="text" placeholder="输入iccid号")
+          label 卡号(ICCID):
+          input.input-box#cardId(type="text" placeholder="请输入卡号(ICCID)")
         .btn-one
-            a(href="javascript:void(0);").btn-bg-white-m#addBtn 确认添加
+            a(href="javascript:void(0);").btn-bg-blue#addBtn 确认
 
 block footer
   script.
@@ -21,7 +19,7 @@ block footer
         console.log(88)
         var account = $.trim($("#cardId").val());
         if(account == ''){
-          layer.sure('请填写输入iccid号');
+          layer.sure('请输入卡号(ICCID)');
           return false;
         }
         $.ajax({

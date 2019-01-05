@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title>手工输入流量卡号</title>
+    <title>充值成功</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
@@ -23,36 +23,12 @@
     </script>
   </head>
   <body>
-    <div class="detail1-sec">
-      <div class="form-row">
-        <label>卡号(ICCID):</label>
-        <input class="input-box" id="cardId" type="text" placeholder="请输入卡号(ICCID)">
+    <div class="error-sec">
+      <div class="img-wrap"><img src="../global/image/ok.png" alt=""></div>
+      <div class="error-tips"> 
+        <p>恭喜！您已充值成功</p>
       </div>
-      <div class="btn-one"><a class="btn-bg-blue" href="javascript:void(0);" id="addBtn">确认</a></div>
+      <div class="btn-one"><a class="btn-bg-blue" href="/template/index.html">查看详情</a></div>
     </div>
-    <script>
-      $(function(){
-      
-        $("#addBtn").onClick('click',function() {
-          console.log(88)
-          var account = $.trim($("#cardId").val());
-          if(account == ''){
-            layer.sure('请输入卡号(ICCID)');
-            return false;
-          }
-          $.ajax({
-              type: "POST",
-              url: "",
-              data: {iccid:account},
-              success: function (result) {
-      
-              },
-              error: function () {
-                layer.sure('系统有误');
-              }
-            });
-          });
-      });
-    </script>
   </body>
 </html>

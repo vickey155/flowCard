@@ -1,27 +1,30 @@
 extends layout/layout
 
 block append headTitle
-  title 1755728695222www
+  title 我的流量卡
 
 block content
-    - var titleName = '1755728695222www';
-    -var headerImg = 'person';
-    include layout/header_blue.pug
+    
     .my-sec
         .sec-card-list
-            .sec-row
+            a.sec-row
                 img.img-pic(src="../global/image/icon_yidong.png")
                 .col
+                    .card-num 卡号：89860 2B012 15901 53973
+                    .no-num 号码：10648 0904 7350
                     .row
-                        label 卡号:
-                        div.font-blue 89860 2B411 16C00 78152
-                    .row
-                        label 号码:
-                        div.font-grey 10640 0904 7350
-                    .row
-                        span.icon.icon-green 关机
-                        span.icon.icon-blue 关机
+                        span.icon.icon-orange 关机
+                        span.icon.icon-blue 正常
                 img.arrow-right(src="../global/image/arrow_right.png")
-        .btn-wrap
-            a(href="javascript:void(0);").btn-bg-white 扫码添加
-            a(href="javascript:void(0);").btn-bg-white 手工添加
+            a.sec-row
+                img.img-pic(src="../global/image/icon_yidong.png")
+                .col
+                    .card-num 卡号：89860 2B012 15901 53973
+                    .no-num 号码：10648 0904 7350
+                    .row
+                        span.icon.icon-orange 关机
+                        span.icon.icon-blue 正常
+                img.arrow-right(src="../global/image/arrow_right.png")
+        .btn-one
+            a(href="javascript:void(0);").btn-bg-blue-rect 扫码充值
+            a(href="javascript:void(0);").btn-bg-blue-rect 手工输入充值

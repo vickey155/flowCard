@@ -10,28 +10,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title>信用卡</title>
+    <title>信用卡中心</title>
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="../global/scss/swiper.min.css">
+    <link rel="stylesheet" href="../global/css/swiper.min.css">
     <script type="text/javascript" src="../global/js/swiper.min.js"></script>
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../global/js/global.js"></script>
     <script>
       $(function () {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
       });
       
     </script>
   </head>
   <body>
-    <div class="header-white">
-      <div class="back_icon"><img src="../../global/image/arrow_grey.png" alt=""></div><span>信用卡</span>
-    </div>
     <div class="creditCard">
-      <div class="banner"><img src="../global/image/banner_card.png" alt=""></div>
-      <div class="swiper_sec">
+      <div class="banner">
+        <div class="swiper-container" id="swiperBanner">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../global/image/banner_card.png" alt=""></div>
+            <div class="swiper-slide"><img src="../global/image/banner_card.png" alt=""></div>
+            <div class="swiper-slide"><img src="../global/image/banner_card.png" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="card-img-sec">
         <div class="swiper-container" id="swiperCard">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../global/image/card_2.png" alt=""></div>
+            <div class="swiper-slide"><img src="../global/image/card_2.png" alt=""></div>
+            <div class="swiper-slide"><img src="../global/image/card_2.png" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="swiper_sec">
+        <div class="swiper-container" id="swiperCard01">
           <div class="swiper-wrapper">
             <div class="swiper-slide item">
               <p class="name">办卡送拉杆箱</p>
@@ -45,8 +61,11 @@
               <p class="name">World奋斗卡</p>
               <p class="state">新客得66元返现</p><img src="../global/image/card_2.png" alt="">
             </div>
+            <div class="swiper-slide item">
+              <p class="name">World奋斗卡</p>
+              <p class="state">新客得66元返现</p><img src="../global/image/card_2.png" alt="">
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="bankList">
@@ -83,16 +102,24 @@
         <p class="name">我的</p></a></div>
     <script>
       $(function(){
-        
-      var swiper = new Swiper('#swiperCard', {
-        pagination: {
-           el: '.swiper-pagination',
-        },
-        autoplay:true,
-        //loop:true,
-        slidesPerView: 3,
-        spaceBetween: 0
-      });
+        var swiperBanner = new Swiper('#swiperBanner', {
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          autoplay:true,
+          loop:true,
+        });
+        var swiperBanner = new Swiper('#swiperCard', {
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          autoplay:true,
+          loop:true,
+        });
+        var swiper = new Swiper('#swiperCard01', {
+          slidesPerView:'auto',
+          freeMode: true,
+        });
       
       });
     </script>

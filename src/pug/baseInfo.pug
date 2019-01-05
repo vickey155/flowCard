@@ -4,8 +4,6 @@ block headTitle
   title 基本资料
 
 block content
-  - var titleName = '基本资料';
-  include layout/header_white.pug
   .baseInfo.infoSec
     .sec(data-name="education")
       .sec_title 学历
@@ -40,8 +38,9 @@ block content
         .elem(data-type="08") 企业主
         .elem(data-type="other") 其他
 
-  .fixed_footer
-    a(href="javascript:void(0);").btn.btn_bg_green#nextBtn 下一步
+  
+    .btn-one
+      a(href="javascript:void(0);").btn-bg-blue#nextBtn 下一步
 
 block footer 
   script.

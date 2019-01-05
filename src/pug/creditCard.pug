@@ -1,20 +1,37 @@
 extends layout/layout
 
 block headTitle
-  title 信用卡
+  title 信用卡中心
 block append headCss
-  link(rel="stylesheet" href="../global/scss/swiper.min.css")
+  link(rel="stylesheet" href="../global/css/swiper.min.css")
   script( type="text/javascript" src="../global/js/swiper.min.js")
 
 block content
-  - var titleName = '信用卡';
-  include layout/header_white.pug
   .creditCard
     .banner
-      img(src="../global/image/banner_card.png", alt="")
+      .swiper-container#swiperBanner
+        .swiper-wrapper
+          .swiper-slide
+            img(src="../global/image/banner_card.png", alt="")
+          .swiper-slide
+            img(src="../global/image/banner_card.png", alt="")
+          .swiper-slide
+            img(src="../global/image/banner_card.png", alt="")
+        .swiper-pagination
+
+    .card-img-sec
+      .swiper-container#swiperCard
+        .swiper-wrapper
+          .swiper-slide
+            img(src="../global/image/card_2.png", alt="")
+          .swiper-slide
+            img(src="../global/image/card_2.png", alt="")
+          .swiper-slide
+            img(src="../global/image/card_2.png", alt="")
+        .swiper-pagination
 
     .swiper_sec
-      .swiper-container#swiperCard
+      .swiper-container#swiperCard01
         .swiper-wrapper
           .swiper-slide.item
             p.name 办卡送拉杆箱
@@ -28,7 +45,10 @@ block content
             p.name World奋斗卡
             p.state 新客得66元返现
             img(src="../global/image/card_2.png", alt="")
-        .swiper-pagination
+          .swiper-slide.item
+            p.name World奋斗卡
+            p.state 新客得66元返现
+            img(src="../global/image/card_2.png", alt="")
 
     .bankList
       .title
@@ -106,16 +126,24 @@ block content
 block footer
   script.
     $(function(){
-      
-    var swiper = new Swiper('#swiperCard', {
-      pagination: {
-         el: '.swiper-pagination',
-      },
-      autoplay:true,
-      //loop:true,
-      slidesPerView: 3,
-      spaceBetween: 0
-    });
+      var swiperBanner = new Swiper('#swiperBanner', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        autoplay:true,
+        loop:true,
+      });
+      var swiperBanner = new Swiper('#swiperCard', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        autoplay:true,
+        loop:true,
+      });
+      var swiper = new Swiper('#swiperCard01', {
+        slidesPerView:'auto',
+        freeMode: true,
+      });
     
     });
 

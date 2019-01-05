@@ -14,6 +14,7 @@ $bg:#f2f2f2;
 $white:#fff;
 $c0:#000;
 $c3:#333;
+$c6:#666;
 $borderRadius:0.1rem;
 .flex{
   display: flex;
@@ -107,23 +108,23 @@ $borderRadius:0.1rem;
   left: 0;
   width: 100%;
   z-index: 99;
-  background: #fff;
+  background: #f8f8f8;
   @extend .flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.04rem 0.22rem;
-  height: 0.52rem;
+  padding: 0.16rem 0 0.1rem;
   border-top:0.01rem solid #f2f2f2;
   .col{
-    text-align: center;
+    text-align: center; 
+    flex:1;
   }
   .foot_icon{
-    height: 0.25rem;
-    width: 0.25rem;
+    height: 0.44rem;
+    width: 0.44rem;
   }
   .name{
-    margin-top: 0.01rem;
-    @include fontFormat($fz: 12px,$fc:#989898,$ta:center);
+    margin-top: 0.02rem;
+    @include fontFormat($fz: 12px,$fc:$c3,$ta:center);
   }
   .btn{
     flex:1;
@@ -134,26 +135,7 @@ $borderRadius:0.1rem;
     background: #01CC35;
   }
 }
-.fixed_footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  background: #fff;
-  @extend .flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 0.52rem;
-  .btn{
-    flex:1;
-  }
-  .btn_bg_green{
-    @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
-    line-height: 0.52rem;
-    background: #01CC35;
-  }
-}
+
 //省市区
 .select-region{
   width: 100%;
@@ -189,38 +171,58 @@ $borderRadius:0.1rem;
 .btn-one{
   display: flex;
   justify-content: center;
-  padding-top:0.3rem;
+  flex-flow: column wrap;
+  padding:0.7rem 0.5rem 0;
   align-items: center;
 }
-a.btn-bg-blue{
-  background: #519aec;
-  line-height: 0.6rem;
-  border-radius: 0.08rem;
-  @include fontFormat($fz: 22px,$fc:#fff,$ta:center);
+
+a.btn-bg-blue-rect{
+  width: 100%;  
+  background: #108ee9;
+  line-height: 1rem;
+  border-radius: 0.22rem;
+  @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
   font-weight: 400;
+  letter-spacing: 0.04rem;
 }
-a.btn-bg-white{
-  background: #fff;
-  @include fontFormat($fz: 11px,$ta:center);
-  border: 0.01rem solid #979797;
-  line-height: 0.3rem;
-  width: 1rem;
-  border-radius:0.05rem;
+a.btn-bg-blue{ 
+  width: 100%;
+  background: #108ee9;
+  line-height: 0.9rem;
+  border-radius: 0.6rem;
+  @include fontFormat($fz: 18px,$fc:#fff,$ta:center);
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+  box-shadow: 0 0.02rem 0.02rem 0.04rem rgba(16,142,233,0.24);
 }
-a.btn-bg-white-m{
-  background: #fff;
-  @include fontFormat($fz: 11px,$ta:center);
-  border: 0.01rem solid #979797;
+.a-link-wrap{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4rem;
   line-height: 0.34rem;
-  width: 1.15rem;
-  border-radius:0.05rem;
+  
 }
-a.btn-bg-yellow{
-  padding: 0 0.2rem;
-  background: #FED500;
-  @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
-  border-radius:0.05rem;
-  line-height: 0.34rem;
+.a-link-wrap .a-link-blue{
+   @include fontFormat($fz: 13px,$fc:#108ee9,$ta:center);
+   position: relative;
+   padding: 0 0.1rem; 
+}
+.a-link-wrap .a-link-blue::after{
+  content:'';
+  position: absolute;
+  top:50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  height:0.3rem;
+  width:0.01rem;
+  background:  #108ee9;
+}
+.a-link-wrap .a-link-blue:last-child::after{
+  display: none;
+  background: #fff;
 }
 //表单
 .el-form {
@@ -228,7 +230,7 @@ a.btn-bg-yellow{
   .el-row {
     border-bottom: 0.01rem solid #DEDEDE;
     width: 100%;
-    padding: 0.08rem 0;
+    padding: 0.48rem 0 0.36rem;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -246,11 +248,17 @@ a.btn-bg-yellow{
       min-width: 0.75rem;
       line-height: 0.34rem;
     }
+    .el-icon{
+      width: 0.32rem;
+      height: 0.36rem;
+      background: red;
+      margin-right: 0.22rem;
+    }
     input{
       background: transparent;
       vertical-align: top;
-      line-height: 0.34rem;
-      height: 0.34rem;
+      line-height: 0.44rem;
+      height: 0.44rem;
       outline: none;
       padding:0 0.06rem;
       @include fontFormat($fz: 16px);
@@ -259,39 +267,37 @@ a.btn-bg-yellow{
     }
 
     .input-code{
-      width:1.4rem;
-    }
-   .code-btn{
-     border-radius: 0.06rem;
-     padding: 0 0.05rem;
-     min-width: 1rem;
-     line-height: 0.28rem;
-     height: 0.28rem;
-     @include fontFormat($fz: 12px,$ta:center);
-     border:0.01rem solid #c2c2c2;
+      width:3.2rem;
+    } 
+   .code-btn{ 
+     border-radius: 0.26rem;
+     padding: 0 0.2rem;
+     min-width: 0.8rem;
+     line-height: 0.46rem;
+     height: 0.46rem;
+     @include fontFormat($fz: 12px,$ta:center,$fc:#108ee9);
+     border:0.01rem solid #108ee9;
    }
   }
 }
 .form-row{
   display: flex;
   align-items: center;
-  padding: 0.35rem 0.17rem 0;
+  padding: 0.3rem 0.5rem;
+  background: #fff;
   label {
-    @include fontFormat($fz:14px);
-    line-height: 0.34rem;
-    margin-right: 0.17rem;
+    @include fontFormat($fz:15px,$fc:$c3);
+    line-height: 0.4rem; 
   }
   input.input-box{
     background: transparent;
     vertical-align: top;
-    line-height: 0.34rem;
-    height: 0.34rem;
+    line-height: 0.4rem;
+    height: 0.4rem;
     outline: none;
-    padding:0 0.06rem;
-    @include fontFormat($fz:14px);
+    @include fontFormat($fz:15px);
     background: #fff;
     padding: 0 0.1rem;
-    border-radius: 0.04rem;
   }
 }
 //白色右箭头 小

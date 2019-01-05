@@ -4,8 +4,6 @@ block headTitle
   title 预约办卡
 
 block content
-  - var titleName = '预约办卡';
-  include layout/header_white.pug
   .bookBank#list
     .bank_item(data-id="guangda")
       img.bank_icon(src="../global/image/colorBank/guangda.png")
@@ -38,8 +36,10 @@ block content
 
   .book_fixed_footer
     .footer_txt 您预约的银行
-    a(href="javascript:void(0);").bookBtn 确定
-
+    a(href="javascript:void(0);").bookBtn 
+      span 确定
+      span.num 
+ 
 block footer
   script.
     $(function(){
@@ -48,12 +48,14 @@ block footer
         var self = $(this);
         var selectId = self.attr('data-id');
         self.addClass('active').siblings().removeClass('active');
+        const num = $("#list").find('.bank_item.active').length;
         if(selectId) {
-          $(".book_fixed_footer .bookBtn").addClass('bookBtn_yellow');
+          $(".book_fixed_footer .bookBtn").addClass('bookBtn_active');
           sendData.bank = selectId;
+          $(".book_fixed_footer .bookBtn_active").find('span.num').html('（'+ num + '）');
         }
       });
-      $(".book_fixed_footer").onClick('click','.bookBtn_yellow',function() {
+      $(".book_fixed_footer").onClick('click','.bookBtn_active',function() {
         console.log(sendData);
         $.ajax({
             type: "POST",

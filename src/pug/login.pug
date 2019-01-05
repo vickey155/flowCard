@@ -9,18 +9,21 @@ block content
           img(src="../global/image/login.jpg", alt="")
       .el-form
           .el-row
-              label.el-label 账号
+              img(src="", alt="").el-icon
               .el-col
-                  input.input-txt#account(type="text" placeholder="手机号")
+                  input.input-txt#account(type="text" placeholder="请输入手机号码")
           .el-row
-              label.el-label 密码
+              img(src="", alt="").el-icon
               .el-col
-                  input.input-code#password(type="text" placeholder="短信验证码")
-                  a(href="javascript:void(0)").code-btn#codeBtn 发送短信验证码
+                  input.input-code#password(type="text" placeholder="请输入短信验证码")
+                  a(href="javascript:void(0)").code-btn#codeBtn 获取验证码
                   a(href="javascript:void(0)" style="display:none;").code-btn#codeTimeBtn <i>120</i>秒
 
       .btn-wrap
           a(href="javascript:void(0);").btn.btn-bg-blue#loginBtn 登录
+      .a-link-wrap
+        a(href="http://").a-link-blue 账号注册> 
+        a(href="http://").a-link-blue 忘记密码>
 
 block footer
   script.

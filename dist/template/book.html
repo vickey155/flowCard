@@ -17,15 +17,12 @@
     <script type="text/javascript" src="../../global/js/global.js"></script>
     <script>
       $(function () {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
       });
       
     </script>
   </head>
   <body>
-    <div class="header-white">
-      <div class="back_icon"><img src="../../global/image/arrow_grey.png" alt=""></div><span>预约办卡</span>
-    </div>
     <div class="bookBank" id="list">
       <div class="bank_item" data-id="guangda"><img class="bank_icon" src="../global/image/colorBank/guangda.png">
         <div class="bank_name">光大银行</div><img class="bank_selected" src="../global/image/selected_yellow.png">
@@ -50,7 +47,7 @@
       </div>
     </div>
     <div class="book_fixed_footer">
-      <div class="footer_txt">您预约的银行</div><a class="bookBtn" href="javascript:void(0);">确定</a>
+      <div class="footer_txt">您预约的银行</div><a class="bookBtn" href="javascript:void(0);"> <span>确定</span><span class="num"> </span></a>
     </div>
     <script>
       $(function(){
@@ -59,12 +56,14 @@
           var self = $(this);
           var selectId = self.attr('data-id');
           self.addClass('active').siblings().removeClass('active');
+          const num = $("#list").find('.bank_item.active').length;
           if(selectId) {
-            $(".book_fixed_footer .bookBtn").addClass('bookBtn_yellow');
+            $(".book_fixed_footer .bookBtn").addClass('bookBtn_active');
             sendData.bank = selectId;
+            $(".book_fixed_footer .bookBtn_active").find('span.num').html('（'+ num + '）');
           }
         });
-        $(".book_fixed_footer").onClick('click','.bookBtn_yellow',function() {
+        $(".book_fixed_footer").onClick('click','.bookBtn_active',function() {
           console.log(sendData);
           $.ajax({
               type: "POST",

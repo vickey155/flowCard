@@ -1,42 +1,51 @@
 extends layout/layout
 
 block headTitle
-  title 充值
+  title 充值页面
 
 block content
-    - var titleName = '充值';
-    -var headerImg = 'back';
-    include layout/header_blue.pug
     .recharge-sec
       .sec-cont
         .card
           .trange-left-bottom
           .col
             .name ICCID号
-            .no 89860<br/>2B012<br/>159015<br/>39738
-          .col
+            .no 89860<br/>2B012<br/>15915<br/>39738
+          .col.col-r
             img(src="../global/image/icon_yidong.png", ).icon-card
           .tips-red 请仔细核对ICCID号，支付后将无法撤回
+ 
+      .tabs-list#cardTypes
+        .tab-one(data-type="18") 
+          .price 18元
+          .time 移动POS机（半年）
+        .tab-one(data-type="35") 
+          .price 35元
+          .time 移动POS机（一年）
+        .tab-one.active(data-type="100") 
+          .price 100元
+          .time 商户任性使用（一年）
 
-        .list
-          .row
-            .flex
-              label 续费套餐：
-              .txt 测试套餐（1个月有效）
-            .row-tips 流量按月计算，一年有效，全国通用，用完即停机
-          .row.flex
-            label 续费金额：
-            .txt ¥2
-
-
+      .sec-money   
+        span 合计支付： 
+        span.font-orange#moneyPrice ¥100.00             
 
       .btn-one
-          a(href="javascript:void(0);").btn-bg-white-m#payBtn 立即支付
+          a(href="javascript:void(0);").btn-bg-blue#payBtn 立即支付
 
 block footer
   script.
     $(function(){
+      $("#cardTypes").onClick('click','.tab-one',function(){
+        const self = $(this);
+        const selfPrice = self.attr('data-type');
+        self.addClass('active').siblings().removeClass('active');
+        $("#moneyPrice").html('¥'+selfPrice);
+      });
       $("#payBtn").onClick('click',function() {
+        const cardType = $("#cardTypes").find('.tab-one.active').attr('data-type');
+        console.log(cardType);
+        return;
         $.ajax({
             type: "POST",
             url: "",

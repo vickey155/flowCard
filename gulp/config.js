@@ -49,7 +49,7 @@ module.exports.image = {
 
 
 module.exports.style = {
-  src: [path.join(src,scss,'/**/*.scss'),'!'+path.join(src,scssCom,'/**/*.scss')],
+	src: [path.join(src, scss, '/**/*.scss'), path.join(src, scss, '/**/*.css'),'!'+path.join(src,scssCom,'/**/*.scss')],
 	dist: path.join(dist,css),
 	cfg:{
     outputStyle:'compressed' // 默认 nested 继承，compact 紧凑，expanded 展开，compressed 压缩

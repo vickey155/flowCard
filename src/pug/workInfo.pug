@@ -4,8 +4,6 @@ block headTitle
   title 工作信息
 
 block content
-  - var titleName = '工作信息';
-  include layout/header_white.pug
   .baseInfo.infoSec
     .sec(data-name="company")
       .sec_title 工作单位性质
@@ -25,7 +23,7 @@ block content
         .elem(data-type="02") 连续缴纳3个月
         .elem(data-type="03") 连续缴纳半年
         .elem(data-type="04") 连续缴纳1年
-        .elem(data-type="other") 连续缴纳1年以上
+        .elem(data-type="other").elem-l 连续缴纳1年以上
     .sec(data-name="workProof")
       .sec_title 可提供工作证明
       .sec_cont
@@ -35,9 +33,8 @@ block content
         .elem(data-type="04") 名片
         .elem(data-type="other") 无工作证明
 
-
-  .fixed_footer
-    a(href="javascript:void(0);").btn.btn_bg_green#nextBtn 下一步
+    .btn-one
+      a(href="javascript:void(0);").btn-bg-blue#nextBtn 下一步
 
 block footer 
   script.

@@ -10,53 +10,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="x5-fullscreen" content="true">
-    <title>充值</title>
+    <title>充值页面</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../global/js/global.js"></script>
     <script>
       $(function () {
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 3.75 + 'px';
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
       });
       
     </script>
   </head>
   <body>
-    <div class="header-purple">
-      <div class="back_icon"><img src="../../global/image/arrow_white.png" alt="">
-      </div><span>充值</span>
-    </div>
     <div class="recharge-sec">
       <div class="sec-cont">
         <div class="card">
           <div class="trange-left-bottom"></div>
           <div class="col">
             <div class="name">ICCID号</div>
-            <div class="no">89860<br/>2B012<br/>159015<br/>39738</div>
+            <div class="no">89860<br/>2B012<br/>15915<br/>39738</div>
           </div>
-          <div class="col"><img class="icon-card" src="../global/image/icon_yidong.png"></div>
+          <div class="col col-r"><img class="icon-card" src="../global/image/icon_yidong.png"></div>
           <div class="tips-red">请仔细核对ICCID号，支付后将无法撤回</div>
         </div>
-        <div class="list">
-          <div class="row">
-            <div class="flex">
-              <label>续费套餐：</label>
-              <div class="txt">测试套餐（1个月有效）</div>
-            </div>
-            <div class="row-tips">流量按月计算，一年有效，全国通用，用完即停机</div>
-          </div>
-          <div class="row flex">
-            <label>续费金额：</label>
-            <div class="txt">¥2</div>
-          </div>
+      </div>
+      <div class="tabs-list" id="cardTypes">
+        <div class="tab-one" data-type="18"> 
+          <div class="price">18元</div>
+          <div class="time">移动POS机（半年）</div>
+        </div>
+        <div class="tab-one" data-type="35"> 
+          <div class="price">35元</div>
+          <div class="time">移动POS机（一年）</div>
+        </div>
+        <div class="tab-one active" data-type="100"> 
+          <div class="price">100元</div>
+          <div class="time">商户任性使用（一年）</div>
         </div>
       </div>
-      <div class="btn-one"><a class="btn-bg-white-m" href="javascript:void(0);" id="payBtn">立即支付</a></div>
+      <div class="sec-money">  <span>合计支付： </span><span class="font-orange" id="moneyPrice">¥100.00             </span></div>
+      <div class="btn-one"><a class="btn-bg-blue" href="javascript:void(0);" id="payBtn">立即支付</a></div>
     </div>
     <script>
       $(function(){
+        $("#cardTypes").onClick('click','.tab-one',function(){
+          const self = $(this);
+          const selfPrice = self.attr('data-type');
+          self.addClass('active').siblings().removeClass('active');
+          $("#moneyPrice").html('¥'+selfPrice);
+        });
         $("#payBtn").onClick('click',function() {
+          const cardType = $("#cardTypes").find('.tab-one.active').attr('data-type');
+          console.log(cardType);
+          return;
           $.ajax({
               type: "POST",
               url: "",
