@@ -68,7 +68,6 @@
         margin: 0 auto;
         width:1.4rem;
         height:2rem;
-        background: #108ee9;
         img{
             height: 100%;
             width: 100%;
@@ -80,7 +79,7 @@
     .btn-wrap{
         padding-top: 1rem;
     }
-}
+} 
 .my-sec{
   .btn-one {
     padding: 1.4rem 0.5rem 0;
@@ -418,6 +417,7 @@
     }
   }
 }
+
 .queryProgress{
   .banner{
     width: 100%;
@@ -426,9 +426,9 @@
     }
   }
   .tips_yellow{
-    padding: 0.05rem;
+    padding: 0.3rem 0.24rem;
     background: #F8E8B9;
-    @include fontFormat($fz: 11px,$fc:#686868,$ta:center);
+    @include fontFormat($fz: 12px,$fc:#666,$ta:center);
   }
   .bankList{
     background: #fff;
@@ -438,6 +438,7 @@
     padding-bottom: 0.3rem;
     .col{
       width: 50%;
+      padding: 0.24rem 0.2rem;
       border-bottom:0.01rem solid #f2f2f2;
       border-right: 0.01rem solid #f2f2f2;
       &:nth-child(even){
@@ -445,18 +446,18 @@
       }
       @extend .flex;
       align-items: center;
-      padding: 0.1rem 0.15rem;
     }
     .bank_icon{
-      width: 0.35rem;
-      height: 0.35rem;
+      width: 0.46rem;
+      height: 0.46rem;
     }
     .bank_name{
-      padding-left: 0.07rem;
-      @include fontFormat($fz: 14px,$fc:#686868);
+      padding-left: 0.2rem;
+      @include fontFormat($fz: 14px,$fc:#333);
     }
   }
 }
+
 .bookBank{
   padding-bottom: 1rem;
   .bank_item{
@@ -482,7 +483,7 @@
     @include fontFormat($fz: 17px,$fc:$c3);
   }
   .bank_selected{
-    max-width: 0.3rem;
+    width: 0.4rem;
     margin-right: 0.05rem;
     display: none;
   }
@@ -526,137 +527,131 @@
     }
   }
 }
+
 .applyInfo{
-  .title{
-    padding: 0.08rem 0.15rem;
-    @include fontFormat($fz:15px,$fc:#646464);
-  }
   .sec_top{
-    background: #393A3E;
-    height: 1.81rem;
-    position: relative;
-    img.bg{
-      height: 100%;
-      width: 100%;
-      display: none;
-    }
+    background: #108ee9;
+    padding: 0.4rem 0 1rem;
+    box-shadow: 0 0.02rem 0.08rem 0.06rem rgba(10,13,47,0.06);
     .sec_cont{
-      position: absolute;
-      left: 0;
-      top:0;
       width:100%;
       height:100%;
-      z-index: 2;
       @extend .flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
       .avater{
-        height: 0.73rem;
-        width: 0.73rem;
-        border:0.06rem solid #4A4A4D;
+        height: 1.16rem;
+        width: 1.16rem;
         border-radius: 50%;
+        background: #fff;
       }
       .name{
-        @include fontFormat($fz: 17px,$fc:#E0E0E0,$ta:center);
-        margin-top: 0.1rem;
+        @include fontFormat($fz: 15px,$fc:#fff,$ta:center);
+        margin-top: 0.36rem;
       }
     }
   }
   .sec_form{
+    margin: -0.6rem 0.24rem 0;
+    background: #fff;
+    border-radius:0.2rem;
+    padding:0.25rem 0.3rem 0.1rem;
+    .title{
+      padding:0.3rem 0;
+      border-bottom: 0.01rem solid #dedede;
+      @include fontFormat($fz:15px,$fc:#aaaaaa);
+    }
     .el-form{
-      margin: 0 0.07rem;
-      padding:0.07rem 0.2rem;
-      background: #fff;
+      .el-row{
+        padding: 0.25rem 0;
+        &:last-child{
+          border: 0;
+        }
+      }
       input.input-txt{
         width: 100%;
-        line-height: 0.22rem;
-        height: 0.22rem;
-        @include fontFormat($fz: 14px,$ta: right);
+        line-height: 0.48rem;
+        @include fontFormat($fz: 15px,$fc:#aaaaaa);
 
       }
       input.input-code{
-        line-height: 0.22rem;
-        height: 0.22rem;
+        line-height: 0.48rem;
         @include fontFormat($fz: 14px);
       }
       .el-label {
-        @include fontFormat($fz: 14px);
-        line-height: 0.22rem;
+        width: 1.2rem;
+        margin-right: 0.5rem;
+        @include fontFormat($fz: 15px,$fc:#000);
       }
-      a.btn-bg-yellow{
-        min-width: 0.8rem;
-        padding: 0 0.1rem;
-        background: #FED500;
-        @include fontFormat($fz: 11px,$fc:#fff,$ta:center);
-        border-radius:0.05rem;
-        line-height: 0.22rem
+      a.btn-border-blue{
+        width: 1.86rem;
+        border:0.01rem solid #108ee9;
+        @include fontFormat($fz: 12px,$fc:#108ee9,$ta:center);
+        border-radius:0.26rem;
+        line-height: 0.48rem
       }
 
     }
   }
   .sec_agreen{
-    @extend .flex;
-    align-items: center;
-    padding: 0.08rem 0.2rem;
-    margin: 0.13rem 0.07rem 0;
-    background:#fff;
     .check_wrap{
-      width: 0.16rem;
-      height: 0.16rem;
-      border:0.01rem solid #666;
-      border-radius: 0.04rem;
       position: relative;
+      align-self: flex-start;
+      margin-top: 0.06rem;
+      min-width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 0.08rem;
+      border:0.01rem solid #dedede;
       input[type=checkbox]{
         z-index: 2;
         position: absolute;
-        left: -0.01rem;
-        top:-.01rem;
-        width: 0.16rem;
-        height: 0.16rem;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        padding: 0;
+        width: 100%;
+        height: 100%;
         opacity: 0.5;
+        border: 0;
         background: transparent;
       }
       img.check_selected{
         z-index: 1;
         position: absolute;
-        left: -0.01rem;
-        top:-.01rem;
-        width: 0.16rem;
-        height: 0.16rem;
-        background: transparent;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width: 0.36rem;
+        height: 0.36rem;
       }
     }
     .agreen_name{
-      @include fontFormat($fz: 12px,$fc:#989898);
-      padding-left: 0.14rem;
+      @include fontFormat($fz: 13px,$fc:#999999);
+      padding-left: 0.24rem;
       word-break:break-all;
       word-wrap:break-word ;
-      a.font_yellow{
+      a.font_blue{
         display: inline;
-        @include fontFormat($fz: 12px,$fc:#F8C513);
+        @include fontFormat($fz: 14px,$fc:#108ee9);
       }
     }
   }
   .sec_tips{
+    padding: 0.16rem 0.24rem;
+    .title{
+      padding:0.24rem 0;
+      @include fontFormat($fz:15px,$fc:#333);
+    }
     .sec_cont{
-      background: #fff;
-      padding: 0.1rem 0.13rem;
       p{
-        @include fontFormat($fz: 12px,$fc:#989898);
-        line-height: 0.2rem;
-      }margin: 0 0.15rem;
+        @include fontFormat($fz: 13px,$fc:#666666);
+        line-height: 0.48rem;
+      }
     }
   }
   .btn-wrap{
-    margin: 0.3rem 0.15rem;
-    width: auto;
-    background: #fff;
-    padding: 0.07rem 0.3rem;
-    .btn-bg-yellow{
-      line-height: 0.35rem;
-      @include fontFormat($fz: 14px,$fc:#fff,$ta:center);
-    }
+    padding: 0.4rem 1rem;
   }
 }
 
@@ -700,6 +695,37 @@
   }
   .btn-one{
     padding:0.6rem 1rem 0;
+  }
+}
+
+.focusPublicNo{
+  height: 100%;
+  background: #fff;
+  .sec-top{
+    padding:1.8rem 1rem 0;
+    text-align:center;
+  }
+  .code-img{
+    width: 4.4rem;
+    height: 4.4rem;
+    vertical-align: top;
+    background: #108ee9;
+    margin-bottom: 0.6rem;
+  }
+  p{
+    @include fontFormat($fz: 24px,$fc:$c3,$ta:center);
+    line-height: 0.8rem;
+  }
+  .footer-banner{
+    width: 100%;
+    background: #108ee9;
+    position: fixed;
+    bottom:0;
+    left: 0;;
+    img{
+      width:100%;
+      height:2.8rem;
+    }
   }
 }
 

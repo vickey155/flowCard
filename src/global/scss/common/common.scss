@@ -251,8 +251,7 @@ a.btn-bg-blue{
     .el-icon{
       width: 0.32rem;
       height: 0.36rem;
-      background: red;
-      margin-right: 0.22rem;
+      margin-right: 0.18rem;
     }
     input{
       background: transparent;
@@ -272,9 +271,8 @@ a.btn-bg-blue{
    .code-btn{ 
      border-radius: 0.26rem;
      padding: 0 0.2rem;
-     min-width: 0.8rem;
-     line-height: 0.46rem;
-     height: 0.46rem;
+     width: 1.8rem;
+     line-height: 0.48rem;
      @include fontFormat($fz: 12px,$ta:center,$fc:#108ee9);
      border:0.01rem solid #108ee9;
    }
@@ -334,28 +332,28 @@ a.arrow-r-white{
     top:50%;
     transform: translate(-50%,-65%);
     background: #fff;
-    border-radius: 0.06rem;
-    min-width: 2.4rem;
-    max-width: 4rem;
+    border-radius: 0.16rem;
+    min-width: 5.2rem;
+    max-width: 7.2rem;
     .layer-cont{
-      padding: 0.24rem 0.34rem;
-      min-height: 0.6rem;
+      padding: 0.4rem 0.36rem;
+      min-height: 1.6rem;
       @extend .flex;
       align-items: center;
       justify-content: center;
     }
     p{
       @include fontFormat($fz:15px,$ta:center);
-      padding: 0.025rem 0;
+      padding: 0.2rem 0;
     }
   }
   .layer-btn{
     @extend .flex;
     justify-content:space-between;
-    border-top:0.01rem solid #ddd;
+    border-top:0.01rem solid #dedede;
     a{
       flex:1;
-      line-height: 0.44rem;
+      line-height: 1rem;
       @include fontFormat($fz:14px,$ta:center);
       border-right:0.01rem solid #ddd;
       &:last-child{
